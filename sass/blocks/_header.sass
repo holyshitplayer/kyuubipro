@@ -1,0 +1,188 @@
+.header
+    background-color: #222222
+    min-height: 64px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    &.homeheader
+        min-height: calc(var(--vh, 1vh) * 100)
+    &__menu
+        height: 128px
+        position: relative
+        div
+            height: 100%
+    &__logo
+        height: 100%
+        display: flex
+        align-items: center
+        &__img
+            margin-top: -16px
+            display: block
+            height: 72px
+    &__links__wrap
+        height: 100%
+        margin-top: 0
+    &__links__ul
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        height: 100%
+        padding: 0
+        margin: 0
+        position: relative
+        li
+            list-style-type: none
+            position: relative
+            cursor: default
+            &:hover
+                #submenu
+                    transition: visibility .15s ease, opacity .15s ease
+                    visibility: visible
+                    opacity: 1
+                .header__link
+                    color: #fda100
+            #submenu
+                right: 50%
+                transform: translateX(50%)
+                position: absolute
+                display: flex
+                flex-direction: column
+                text-align: center
+                white-space: nowrap
+                opacity: 0
+                visibility: hidden
+                padding: 0
+                z-index: 10
+                background: rgba(0, 0, 0, 0.8)
+                border-radius: 5px
+                margin-top: 15px
+                padding: 10px 0
+                &::after
+                    content: ''
+                    position: absolute
+                    display: block
+                    background: 0 0
+                    width: 0
+                    height: 0
+                    border-style: solid
+                    top: -8px
+                    right: 50%
+                    border-color: rgba(0, 0, 0, 0.8) transparent
+                    border-width: 0 8px 8px
+                    transform: translateX(50%)
+                a
+                    padding: 15px
+                    display: block
+                    text-decoration: none
+                    color: #eeeeee
+                    font-size: 28px
+                    +Medium
+                    &:hover
+                        color: #fda100
+                        background: rgba(255, 255, 255, 0.1)
+                li
+                    padding: 0
+    &__link
+        padding: 47px 25px
+        text-decoration: none
+        font-size: 28px
+        color: #eeeeee
+        transition: color .15s ease
+        +Medium
+        &:focus
+            color: darken(#fda100, 10%)!important
+        i
+            font-size: 26px
+            margin-left: 10px
+    &__welcome
+        text-align: center
+        &__title
+            font-size: 42px
+            margin: 0
+            padding: 0
+        &__text
+            font-size: 28px
+            margin: 30px 0 40px 0
+            padding: 0
+        &__link
+            display: inline-block
+            text-decoration: none
+            font-size: 30px
+            color: #ffffff
+            text-transform: uppercase
+            border-radius: 5px
+            padding: 25px 30px
+            border: 1px solid #ffffff
+            transition: background-color .15s ease, color .15s ease, box-shadow .15s ease
+            +Medium
+            &:hover
+                background-color: #ffffff
+                color: #000000
+                box-shadow: 0 0 10px #ffffff
+    &__down-button
+        text-align: center
+        padding-bottom: 30px
+        animation: 1s infinite alternate movebutton
+        a
+            display: block
+            padding-top: 30px
+            color: #ffffff
+            text-decoration: none
+            font-size: 34px
+    &__menu-mobile
+        display: none
+        #menu-close
+            z-index: 100
+            position: absolute
+            padding: 20px 30px
+            right: 0
+            font-size: 18px
+            cursor: pointer
+    &__menu-btn-wrap
+        display: none
+        height: 100%
+        align-items: center
+    &__menu-btn
+        padding: 15px
+        i
+            font-size: 24px
+            color: #ffffff
+    &__mobile-link
+        transition: color .15s ease
+        position: relative
+        font-size: 18px
+        +Medium
+        i
+            width: 20px
+            margin-right: 10px
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            background-color: darken(#fda100, 10%)
+            height: 2px
+            width: 0
+            transition: width .15s ease
+        &:focus
+            color: darken(#fda100, 10%)
+            &::before
+                width: 100%
+        &:hover
+            color: #fda100
+        &.span
+            &::before
+                display: none
+            &:hover
+                color: #fda100
+            &:focus
+                color: darken(#fda100, 10%)
+    span.header__link
+        cursor: default
+            
+
+@keyframes movebutton
+    0%
+        transform: translateY(-5px)
+    100%
+        transform: translateY(5px)
