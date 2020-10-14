@@ -1,0 +1,351 @@
+.homepage
+    &__news
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        &__post
+            width: calc(100% / 2 - 5px)
+            outline: 1px solid #333333
+            display: flex
+            flex-direction: column
+            text-decoration: none
+            justify-content: flex-end
+            padding: 15px
+            margin-top: 10px
+            filter: brightness(75%)
+            transition: outline .15s ease, filter .15s ease
+            &:nth-child(-n+2)
+                margin-top: 0
+            &:hover
+                outline: 1px solid #666666
+                filter: brightness(100%)
+            span
+                color: #eeeeee
+                &:first-child
+                    text-transform: uppercase
+                    font-size: 24px
+                    padding-bottom: 5px
+                    +Bold
+                &:nth-child(2)
+                    font-size: 24px
+                &:last-child
+                    padding-top: 15px
+                    font-size: 22px
+    &__account
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &__user
+            display: flex
+            margin: auto
+            img
+                width: 144px
+                height: 144px
+                margin-right: 15px
+                border-radius: 3px
+            div
+                display: flex
+                justify-content: center
+                flex-direction: column
+                p
+                    margin: 0
+                    &:first-child
+                        font-size: 24px
+                    &:nth-child(2)
+                        font-size: 26px
+                        margin-bottom: 10px
+                    &:nth-last-child(-n+2)
+                        font-size: 22px
+                    span
+                        +Medium
+        &__menu
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            max-width: 50%
+            height: 100%
+            a
+                height: calc(100% / 4)
+                padding: 0 10px
+                font-size: 24px
+                margin-top: 3px
+                display: flex
+                align-items: center
+                flex-direction: column
+                justify-content: center
+                text-decoration: none
+                color: #cccccc
+                background: hsla(0, 0%, 96.1%, .1)
+                transition: background .15s ease, color .15s ease
+                +Medium
+                &:hover
+                    background: #ffffff
+                    color: #333333
+                &:first-child
+                    margin-top: 0
+                i
+                    display: block
+                    margin-bottom: 5px
+    &__server
+        width: 100%
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        p
+            margin: 0
+        &__title
+            text-align: center
+            font-size: 24px
+            text-transform: uppercase
+            margin: 0
+            padding: 30px 0
+            background: rgba(245,245,245,0.1)
+            +Bold
+            a
+                text-decoration: none
+                color: #ffffff
+                transition: color .15s ease
+                &:hover
+                    color: #fda100
+        &__content
+            padding: 15px
+            font-size: 24px
+        &__section-title
+            font-size: 22px
+            color: #cccccc
+            padding-bottom: 5px
+            +Medium
+        &__online
+            margin-top: 15px
+        &__online-total
+            height: 20px
+            border: 2px solid #eeeeee
+            padding: 3px
+        &__online-now
+            background-color: #eeeeee
+            height: 100%
+        &__links
+            margin-top: 15px
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            a
+                width: calc(100% / 2 - 2.5px)
+                padding: 25px 0
+                font-size: 24px
+                margin-top: 3px
+                display: flex
+                align-items: center
+                flex-direction: column
+                justify-content: center
+                text-decoration: none
+                color: #ffffff
+                background: rgba(245,245,245,0.1)
+                transition: background .15s ease, color .15s ease
+                +Medium
+                &:hover
+                    background: #ffffff
+                    color: #333333
+    &__servers
+        position: relative
+        .swiper-container
+            filter: brightness(75%)
+            transition: filter .15s ease
+            &:hover
+                filter: brightness(100%)
+        .swiper-button-next, .swiper-button-prev
+            color: #ffffff
+            top: 36px
+            font-family: "Font Awesome 5 Free"
+            font-weight: 900
+            font-size: 28px
+            padding: 30px
+            &::after
+                display: none
+        .swiper-button-next
+            right: 0
+            &::before
+                content: '\f105'
+        .swiper-button-prev
+            left: 0
+            &::before
+                content: '\f104'
+    &__guilds
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__guild
+        width: calc(100% / 2 - 5px)
+        margin-top: 10px
+        outline: 1px solid #333333
+        filter: brightness(75%)
+        transition: outline .15s ease, filter .15s ease
+        &:nth-child(-n+2)
+            margin-top: 0
+        &:hover
+            outline: 1px solid #666666
+            filter: brightness(100%)
+        &__title
+            margin: 0
+            font-size: 24px
+            text-transform: uppercase
+            text-align: center
+            padding: 30px 0
+            background: rgba(245,245,245,0.1)
+            +Bold
+            a
+                text-decoration: none
+                color: #ffffff
+                transition: color .15s ease
+                &:hover
+                    color: #fda100
+        &__content
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            padding: 15px
+        &__info
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            width: 100%
+            p
+                width: 50%
+                margin: 0
+                padding: 0
+                &:nth-child(2)
+                    text-align: right
+                span
+                    font-size: 24px
+                    display: block
+                    &:first-child
+                        font-size: 22px
+                        color: #cccccc
+                        +Medium
+        &__players
+            margin-top: 10px
+            width: 100%
+            span
+                font-size: 22px
+                color: #cccccc
+                +Medium
+        &__players-total
+            margin-top: 3px
+            width: 100%
+            height: 20px
+            border: 2px solid #eeeeee
+            padding: 2px
+        &__players-now
+            background-color: #eeeeee
+            height: 100%
+    &__voting
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__voter
+        display: block
+        text-align: center
+        padding: 15px
+        width: calc(100% / 3 - 6.66px)
+        margin-top: 10px
+        outline: 1px solid #333333
+        background: rgba(245,245,245,0.02)
+        text-decoration: none
+        color: #eeeeee
+        filter: brightness(75%)
+        transition: outline .15s ease, filter .15s ease
+        &:nth-child(-n+3)
+            margin-top: 0
+        &:hover
+            filter: brightness(100%)
+            outline: 1px solid #666666
+        img
+            width: 72px
+            height: 72px
+            margin-right: 10px
+            border-radius: 3px
+        &__info p
+            margin: 0
+            &:first-child
+                font-size: 24px
+                +Medium
+            &:last-child
+                font-size: 22px
+    &__social
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        &__link
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            width: calc(100% / 3 - 6.66px)
+            text-decoration: none
+            outline: 1px solid #333333
+            padding: 15px
+            filter: brightness(75%)
+            transition: outline .15s ease, filter .15s ease
+            &:hover
+                outline: 1px solid #666666
+                filter: brightness(100%)
+            span
+                display: block
+                &:first-child
+                    text-transform: uppercase
+                    transition: color .15s ease
+                    font-size: 24px
+                    +Bold
+                &:last-child
+                    color: #eeeeee
+                    font-size: 22px
+    &__improvements
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__improvement
+        display: block
+        width: calc(100% / 2 - 5px)
+        text-decoration: none
+        color: #eeeeee
+        outline: 1px solid #333333
+        margin-top: 10px
+        background: rgba(245,245,245,0.02)
+        filter: brightness(75%)
+        transition: outline .15s ease, filter .15s ease
+        &:nth-child(-n+2)
+            margin-top: 0
+        &:hover
+            outline: 1px solid #666666
+            filter: brightness(100%)
+        &__title
+            margin: 0
+            font-size: 24px
+            text-align: center
+            padding: 30px 0
+            background: rgba(245,245,245,0.1)
+            p
+                margin: 0
+                &:first-child
+                    text-transform: uppercase
+                    +Bold
+                span
+                    color: #fda100
+                    +Bold
+        &__content
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 15px
+            img
+                width: 72px
+                height: 72px
+                margin-right: 10px
+                border-radius: 3px
+            p
+                margin: 0
+                &:first-child
+                    font-size: 24px
+                    +Medium
+                &:last-child
+                    font-size: 22px

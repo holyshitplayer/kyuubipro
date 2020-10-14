@@ -6,28 +6,112 @@
             margin-top: -8px
             height: 48px
         &__link
-            padding: 25px
-            font-size: 18px
+            padding: 26px
+            font-size: 16px
             i
                 font-size: 16px
                 margin-left: 5px
+                transform: translateY(2px)
         &__links__ul li #submenu a
             padding: 10px
-            font-size: 18px
+            font-size: 16px
         &__welcome
             &__title
                 font-size: 32px
             &__text
-                font-size: 18px
+                font-size: 16px
                 margin: 20px 0 30px 0
             &__link
-                font-size: 20px
+                font-size: 16px
                 padding: 15px 20px
         &__down-button
-            padding-bottom: 20px
             a
-                padding-top: 20px
-                font-size: 24px
+                padding: 20px 0
+                font-size: 20px
+    .homepage
+        &__news
+            &__post
+                span
+                    &:first-child
+                        font-size: 16px
+                    &:nth-child(2)
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
+        &__account
+            &__user
+                img
+                    width: 96px
+                    height: 96px
+                div p
+                    &:first-child
+                        font-size: 16px
+                    &:nth-child(2)
+                        font-size: 18px
+                    &:nth-last-child(-n+2)
+                        font-size: 14px
+            &__menu a
+                font-size: 16px
+                padding: 0 40px
+        &__server
+            &__title
+                font-size: 16px
+                padding: 20px 0
+            &__content
+                font-size: 16px
+            &__section-title
+                font-size: 14px
+            &__online-total
+                height: 16px
+            &__links a
+                font-size: 16px
+                padding: 15px 0
+        &__servers
+            .swiper-button-next, .swiper-button-prev
+                top: 30px
+                font-size: 20px
+                padding: 20px
+        &__guild
+            &__title
+                font-size: 16px
+                padding: 20px 0
+            &__info p span
+                font-size: 16px
+                &:first-child
+                    font-size: 14px
+            &__players
+                span
+                    font-size: 14px
+            &__players-total
+                height: 12px
+        &__voter
+            img
+                width: 56px
+                height: 56px
+            &__info p
+                &:first-child
+                    font-size: 16px
+                &:last-child
+                    font-size: 14px
+        &__social
+            &__link span
+                &:first-child
+                    font-size: 16px
+                &:last-child
+                    font-size: 14px
+        &__improvement
+            &__title
+                font-size: 16px
+                padding: 20px 0
+            &__content
+                img
+                    width: 56px
+                    height: 56px
+                p
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
     
 @media (max-width: 1200px)
     .header
@@ -48,22 +132,76 @@
                 margin-top: -4px
         &__welcome__text
             padding: 0 20px
+    .homepage
+        &__news
+            &__post span
+                &:nth-child(2)
+                    display: block
+                &:last-child
+                    padding-top: 0
+
+@media (max-width: 768px)
+    .homepage
+        &__news
+            &__post span
+                &:nth-child(2)
+                    display: none
+                &:last-child
+                    padding-top: 0
 
 @media (max-width: 576px)
     .header
         &__menu-btn i
             font-size: 20px
-        &__mobile-link
-            font-size: 16px
-            i
-                margin-right: 5px
+        &__mobile-link i
+            margin-right: 5px
         &__welcome
             &__title
                 font-size: 24px
             &__text
-                font-size: 16px
                 margin: 10px 0 20px 0
+    .homepage
+        &__account
+            &__menu
+                display: none
+        &__server
+            &__text
+                display: none
+            &__online
+                margin-top: 0
+        &__voter
+            width: calc(100% / 2 - 5px)
+            &:nth-child(-n+3)
+                margin-top: 10px
+            &:nth-child(-n+2)
+                margin-top: 0
+        &__social
             &__link
-                font-size: 18px
-        &__down-button a
-            font-size: 20px
+                width: 100%
+                margin-top: 10px
+                &:first-child
+                    margin-top: 0
+        &__server
+            &__links a
+                width: 100%
+                &:first-child
+                    margin-top: 0
+        &__news
+            &__post
+                width: 100%
+                &:nth-child(-n+2)
+                    margin-top: 10px
+                &:first-child
+                    margin-top: 0
+        &__guild
+            width: 100%
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0
+        &__improvement
+            width: 100%
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0
