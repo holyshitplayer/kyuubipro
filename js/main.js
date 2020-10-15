@@ -49,50 +49,6 @@ document.addEventListener(
     }
 );
 
-
-let post_width = $('.homepage__news__post').css('width')
-window.addEventListener('resize', () => {
-    $('.homepage__news-item').each(function (e) {
-        let width = $(this).css('width');
-        let height = Number(width.substring(0, width.length - 2)) / 2;
-        $(this).css('height', height);
-    });
-});
-if(window.innerWidth <= 576) {
-    $('.homepage__news__post').css('height', Number(post_width.substring(0, post_width.length - 2)) / 4);
-} else {
-    $('.homepage__news__post').css('height', Number(post_width.substring(0, post_width.length - 2)) / 2);
-};
-window.addEventListener('resize', () => {
-    if(window.innerWidth <= 576) {
-        $('.homepage__news__post').each(function (e) {
-            let width = $(this).css('width');
-            let height = Number(width.substring(0, width.length - 2)) / 4;
-            $(this).css('height', height);
-        });
-    } else {
-        $('.homepage__news__post').each(function (e) {
-            let width = $(this).css('width');
-            let height = Number(width.substring(0, width.length - 2)) / 2;
-            $(this).css('height', height);
-        });
-    };
-});
-
-let account_width = $('.homepage__account').css('width')
-$('.homepage__account').css('height', Number(account_width.substring(0, account_width.length - 2)) / 2);
-window.addEventListener('resize', () => {
-    $('.homepage__account').each(function (e) {
-        let width = $(this).css('width');
-        let height = Number(width.substring(0, width.length - 2)) / 2;
-        $(this).css('height', height);
-    });
-});
-
-let servers = [];
-$('h3.homepage__server__title').each(function (e) {
-    servers.push($(this).text());
-});
 let swiper = new Swiper('.swiper-container', {
     autoplay: {
         delay: 5000,
@@ -124,28 +80,6 @@ $('.homepage__guild__players').each(function (e) {
     $(this).find('.homepage__guild__players-now').css('width', width);
 });
 
-let social_width = $('.homepage__social__link').css('width')
-if(window.innerWidth <= 576) {
-    $('.homepage__social__link').css('height', Number(social_width.substring(0, social_width.length - 2)) / 4);
-} else {
-    $('.homepage__social__link').css('height', Number(social_width.substring(0, social_width.length - 2)) / 2);
-};
-window.addEventListener('resize', () => {
-    if(window.innerWidth <= 576) {
-        $('.homepage__social__link').each(function (e) {
-            let width = $(this).css('width');
-            let height = Number(width.substring(0, width.length - 2)) / 4;
-            $(this).css('height', height);
-        });
-    } else {
-        $('.homepage__social__link').each(function (e) {
-            let width = $(this).css('width');
-            let height = Number(width.substring(0, width.length - 2)) / 2;
-            $(this).css('height', height);
-        });
-    };
-});
-
 $('.homepage__social__link').each(function (e) {
     let color = $(this).attr('data-accent-color');
     $(this).on('mouseover', () => {
@@ -157,3 +91,21 @@ $('.homepage__social__link').each(function (e) {
         $(this).find('span.title').css('color', '#ffffff');
     });
 });
+
+let pulseShadowAnimations = {
+	direction: 'alternate',
+	duration: 1000,
+	iterations: Infinity,
+	easing: 'ease'
+}
+
+
+let avatar = $('.pulse-color');
+avatar.css('outline-color', avatar.attr('data-user-color'));
+avatar[0].animate(
+    [
+        { boxShadow: '0px 0px 5px 0 ' + avatar.attr('data-user-color') },
+        { boxShadow: '0px 0px 30px 0 ' + avatar.attr('data-user-color') },
+    ],
+    pulseShadowAnimations
+)

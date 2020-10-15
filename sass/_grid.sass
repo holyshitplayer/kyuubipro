@@ -31,14 +31,14 @@
     .homepage
         &__news
             &__post
+                height: 150px
                 span
                     &:first-child
-                        font-size: 16px
-                    &:nth-child(2)
                         font-size: 16px
                     &:last-child
                         font-size: 14px
         &__account
+            height: 375px
             &__user
                 img
                     width: 96px
@@ -52,7 +52,7 @@
                         font-size: 14px
             &__menu a
                 font-size: 16px
-                padding: 0 40px
+                padding: 0 10px
         &__server
             &__title
                 font-size: 16px
@@ -94,11 +94,13 @@
                 &:last-child
                     font-size: 14px
         &__social
-            &__link span
-                &:first-child
-                    font-size: 16px
-                &:last-child
-                    font-size: 14px
+            &__link
+                height: 120px
+                span
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
         &__improvement
             &__title
                 font-size: 16px
@@ -112,6 +114,12 @@
                         font-size: 16px
                     &:last-child
                         font-size: 14px
+    .footer
+        margin: 45px 0 15px 0
+        font-size: 14px
+        &__logo
+            &__img
+                height: 80px
     
 @media (max-width: 1200px)
     .header
@@ -140,15 +148,6 @@
                 &:last-child
                     padding-top: 0
 
-@media (max-width: 768px)
-    .homepage
-        &__news
-            &__post span
-                &:nth-child(2)
-                    display: none
-                &:last-child
-                    padding-top: 0
-
 @media (max-width: 576px)
     .header
         &__menu-btn i
@@ -162,6 +161,7 @@
                 margin: 10px 0 20px 0
     .homepage
         &__account
+            height: 175px
             &__menu
                 display: none
         &__server
@@ -177,6 +177,7 @@
                 margin-top: 0
         &__social
             &__link
+                height: 100px
                 width: 100%
                 margin-top: 10px
                 &:first-child
@@ -189,6 +190,7 @@
         &__news
             &__post
                 width: 100%
+                height: 100px
                 &:nth-child(-n+2)
                     margin-top: 10px
                 &:first-child
@@ -205,3 +207,8 @@
                 margin-top: 10px
             &:first-child
                 margin-top: 0
+    .footer
+        margin: 30px 0 15px 0
+        font-size: 12px
+        &__logo
+            display: none

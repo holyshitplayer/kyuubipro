@@ -5,6 +5,7 @@
         flex-wrap: wrap
         &__post
             width: calc(100% / 2 - 5px)
+            height: 200px
             outline: 1px solid #333333
             display: flex
             flex-direction: column
@@ -12,27 +13,27 @@
             justify-content: flex-end
             padding: 15px
             margin-top: 10px
-            filter: brightness(75%)
-            transition: outline .15s ease, filter .15s ease
+            opacity: .7
+            box-shadow: inset 0px -50px 50px 0px rgba(0,0,0,0.7)
+            transition: outline .15s ease, opacity .15s ease
             &:nth-child(-n+2)
                 margin-top: 0
             &:hover
                 outline: 1px solid #666666
-                filter: brightness(100%)
+                opacity: 1
+                &::after
+                    background-color: rgba(0, 0, 0, .70)
             span
                 color: #eeeeee
                 &:first-child
                     text-transform: uppercase
                     font-size: 24px
-                    padding-bottom: 5px
                     +Bold
-                &:nth-child(2)
-                    font-size: 24px
                 &:last-child
-                    padding-top: 15px
                     font-size: 22px
     &__account
         width: 100%
+        height: 630px
         display: flex
         align-items: center
         justify-content: space-between
@@ -43,7 +44,7 @@
                 width: 144px
                 height: 144px
                 margin-right: 15px
-                border-radius: 3px
+                outline: 3px solid
             div
                 display: flex
                 justify-content: center
@@ -67,7 +68,7 @@
             height: 100%
             a
                 height: calc(100% / 4)
-                padding: 0 10px
+                padding: 0 40px
                 font-size: 24px
                 margin-top: 3px
                 display: flex
@@ -281,14 +282,18 @@
             flex-direction: column
             justify-content: flex-end
             width: calc(100% / 3 - 6.66px)
+            height: 200px
             text-decoration: none
             outline: 1px solid #333333
             padding: 15px
+            box-shadow: inset 0px -25px 50px 0px rgba(0,0,0,0.7)
             filter: brightness(75%)
             transition: outline .15s ease, filter .15s ease
             &:hover
                 outline: 1px solid #666666
                 filter: brightness(100%)
+                &::after
+                    background-color: rgba(0, 0, 0, .70)
             span
                 display: block
                 &:first-child
