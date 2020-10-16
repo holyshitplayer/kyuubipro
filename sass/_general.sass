@@ -32,16 +32,24 @@ html, body
     &::selection
         background-color: #333333
 
-html
-    height: 100vh
-
 body
     display: flex
     flex-direction: column
     height: 100%
-    &.background
-        overflow: visible
-        -webkit-mask-image: -webkit-linear-gradient(top,black 20%,transparent 99%)
+    position: relative
+    background: linear-gradient(rgba(20,20,20,0.92), rgba(20,20,20,0.92)), url('/img/backgrounds/body.webp')
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: top center
+    &::before
+        content: ''
+        right: 0
+        bottom: 0
+        top: 0
+        left: 0
+        
+        position: absolute
 
 h3
     font-weight: normal
@@ -121,10 +129,10 @@ section
         display: inline
         text-decoration: none
         font-size: 20px
-        color: #333333
+        color: #555555
         text-transform: uppercase
         padding: 8px
-        border: 1px solid #333333
+        border: 1px solid #555555
         transition: color .15s ease, border-color .15s ease
         +Bold
         &:hover
@@ -164,6 +172,20 @@ section
         &:last-child
             margin-right: 0
 
+.block-text
+    font-size: 24px
+    margin-top: 10px
+    box-shadow: 0 5px 15px rgba(0,0,0,.1)
+    line-height: 1.5
+    padding: 15px
+    background-color: rgba(0, 0, 0, .1)
+    border: 1px solid #252525
+    transition: background-color .15s ease
+    &:first-child
+        margin-top: 0
+    &:hover
+        background-color: rgba(245, 245, 245, .01)
+
 @media (max-width: 1600px)
     ::-webkit-scrollbar
         width: 7px
@@ -179,6 +201,8 @@ section
         width: 40px
         height: 40px
         margin-right: 5px
+        font-size: 16px
+    .block-text
         font-size: 16px
 
 @media (max-width: 992px)
@@ -196,3 +220,7 @@ section
             flex-wrap: wrap
             .half-block:last-child, .third-block:last-child, .two-thirds-block:last-child
                 margin-top: 15px
+
+@media (max-width: 768px)
+    body
+        background: #151515

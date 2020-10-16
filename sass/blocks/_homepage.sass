@@ -13,14 +13,14 @@
             justify-content: flex-end
             padding: 15px
             margin-top: 10px
-            opacity: .7
-            box-shadow: inset 0px -50px 50px 0px rgba(0,0,0,0.7)
-            transition: outline .15s ease, opacity .15s ease
+            filter: brightness(85%)
+            box-shadow: inset 0px -50px 50px 0px rgba(0,0,0,0.5)
+            transition: outline .15s ease, filter .15s ease
             &:nth-child(-n+2)
                 margin-top: 0
             &:hover
                 outline: 1px solid #666666
-                opacity: 1
+                filter: brightness(100%)
                 &::after
                     background-color: rgba(0, 0, 0, .70)
             span
@@ -285,8 +285,8 @@
             text-decoration: none
             outline: 1px solid #333333
             padding: 15px
-            box-shadow: inset 0px -25px 50px 0px rgba(0,0,0,0.7)
-            filter: brightness(75%)
+            box-shadow: inset 0px -25px 50px 0px rgba(0,0,0,0.3)
+            filter: brightness(85%)
             transition: outline .15s ease, filter .15s ease
             &:hover
                 outline: 1px solid #666666
