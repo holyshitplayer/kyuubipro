@@ -1,0 +1,49 @@
+.rules
+    &__rule
+        opacity: .8
+        margin-bottom: 15px
+        transition: opacity .15s ease
+        &:hover
+            opacity: 1
+        &:last-child
+            margin-bottom: 0
+        &__number
+            +Bold
+        &__penalty
+            margin-top: 5px!important
+            padding: 10px
+            border: 1px solid rgba(245, 245, 245, .2)
+            span:first-child
+                color: #fda100
+                +Bold
+
+.commands
+    &__command
+        padding-bottom: 15px
+        opacity: .8
+        transition: opacity .15s ease
+        &:hover
+            opacity: 1
+        span:first-child
+            display: inline-block
+            padding: 10px
+            background-color: rgba(245, 245, 245, .2)
+            border-radius: 3px
+            +Medium
+        &:last-child
+            padding-bottom: 0
+
+.faq
+    &__block
+        padding-bottom: 25px
+        opacity: .8
+        transition: opacity .15s ease
+        &:hover
+            opacity: 1
+        p:first-child
+            padding-bottom: 5px
+            +Bold
+            i
+                margin-right: 10px
+        &:last-child
+            padding-bottom: 0
