@@ -165,24 +165,25 @@ section
             margin-right: 0
 
 .block-text
-    font-size: 24px
     margin-top: 10px
     box-shadow: 0 5px 15px rgba(0,0,0,.1)
     padding: 15px
-    background-color: rgba(0, 0, 0, .1)
-    border: 1px solid #252525
+    background-color: rgba(245, 245, 245, .02)
+    border: 1px solid #353535
     transition: background-color .15s ease
     &:first-child
         margin-top: 0
     &:hover
-        background-color: rgba(245, 245, 245, .03)
-    &__title
-        font-size: 22px
-        padding-bottom: 10px
-        +Bold
+        background-color: rgba(245, 245, 245, .05)
     p
+        font-size: 22px
         margin: 0
+        &.block-text__title
+            font-size: 24px
+            padding-bottom: 10px
+            +Bold
     a
+        font-size: 24px
         text-decoration: none
         margin-top: 10px
         padding: 15px
@@ -219,11 +220,13 @@ section
         margin-right: 5px
         font-size: 16px
     .block-text
-        font-size: 16px
-        &__title
+        p
             font-size: 14px
+            &.block-text__title
+                font-size: 16px
         a
-            padding: 10px
+            font-size: 16px
+            padding: 8px
 
 @media (max-width: 992px)
     .half-block, .third-block, .two-thirds-block
@@ -240,6 +243,13 @@ section
             flex-wrap: wrap
             .half-block:last-child, .third-block:last-child, .two-thirds-block:last-child
                 margin-top: 15px
+    .block-text
+        p
+            font-size: 12px
+            &.block-text__title
+                font-size: 14px
+        a
+            padding: 5px
 
 @media (max-width: 768px)
     body
