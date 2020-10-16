@@ -3,7 +3,6 @@
         &__menu
             height: 72px
         &__logo__img
-            margin-top: -8px
             height: 48px
         &__link
             padding: 26px
@@ -122,6 +121,25 @@
                 height: 56px
         &__info
             font-size: 14px
+    .news
+        &__post
+            height: 200px
+            span
+                &:first-child
+                    font-size: 16px
+                &:last-child
+                    font-size: 14px
+    .post
+        &__header
+            height: 400px
+            &__title p
+                &:first-child
+                    font-size: 20px
+                &:last-child
+                    font-size: 36px
+        &__content
+            &__text
+                font-size: 16px
     
 @media (max-width: 1200px)
     .header
@@ -138,8 +156,6 @@
             display: flex
         &__logo
             justify-content: flex-end
-            &__img
-                margin-top: -4px
         &__welcome__text
             padding: 0 20px
     .homepage
@@ -149,6 +165,27 @@
                     display: block
                 &:last-child
                     padding-top: 0
+    .news
+        &__post
+            height: 150px
+    .post
+        &__news__list
+            .homepage__news__post
+                width: calc(100% / 2 - 5px)
+                &:nth-child(-n+2)
+                    margin-top: 0
+
+@media (max-width: 768px)
+    .news
+        &__post
+            width: calc(100% / 2 - 5px)
+            &:nth-child(-n+3)
+                margin-top: 10px
+            &:nth-child(-n+2)
+                margin-top: 0
+    .post
+        &__header
+            height: 250px
 
 @media (max-width: 576px)
     .header
@@ -179,7 +216,6 @@
                 margin-top: 0
         &__social
             &__link
-                height: 100px
                 width: 100%
                 margin-top: 10px
                 &:first-child
@@ -192,7 +228,7 @@
         &__news
             &__post
                 width: 100%
-                height: 100px
+                height: 125px
                 &:nth-child(-n+2)
                     margin-top: 10px
                 &:first-child
@@ -217,3 +253,28 @@
                 height: 48px
         &__info
             font-size: 12px
+    .news
+        &__post
+            width: 100%
+            height: 125px
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0
+    .post
+        &__header
+            height: 200px
+            &__background
+                background-position: 50% 50%
+            &__title p
+                &:first-child
+                    font-size: 16px
+                &:last-child
+                    font-size: 24px
+        &__news__list
+            .homepage__news__post
+                width: 100%
+                &:nth-child(-n+2)
+                    margin-top: 10px
+                &:first-child
+                    margin-top: 0

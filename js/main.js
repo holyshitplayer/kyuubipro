@@ -93,19 +93,20 @@ $('.homepage__social__link').each(function (e) {
 });
 
 let pulseShadowAnimations = {
-	direction: 'alternate',
-	duration: 1000,
-	iterations: Infinity,
-	easing: 'ease'
+    direction: 'alternate',
+    duration: 1000,
+    iterations: Infinity,
+    easing: 'ease'
 }
 
-
-let avatar = $('.pulse-color');
-avatar.css('outline-color', avatar.attr('data-user-color'));
-avatar[0].animate(
-    [
-        { boxShadow: '0px 0px 5px 0 ' + avatar.attr('data-user-color') },
-        { boxShadow: '0px 0px 30px 0 ' + avatar.attr('data-user-color') },
-    ],
-    pulseShadowAnimations
-)
+if ($('.pulse-color').length) {
+    let avatar = $('.pulse-color');
+    avatar.css('outline-color', avatar.attr('data-user-color'));
+    avatar[0].animate(
+        [
+            { boxShadow: '0px 0px 5px 0 ' + avatar.attr('data-user-color') },
+            { boxShadow: '0px 0px 30px 0 ' + avatar.attr('data-user-color') },
+        ],
+        pulseShadowAnimations
+    );
+};

@@ -1,0 +1,33 @@
+.news
+    &__list
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__post
+        width: calc(100% / 3 - 6.66px)
+        height: 250px
+        outline: 1px solid #333333
+        display: flex
+        flex-direction: column
+        text-decoration: none
+        justify-content: flex-end
+        padding: 15px
+        margin-top: 10px
+        opacity: .7
+        box-shadow: inset 0px -50px 50px 0px rgba(0,0,0,0.7)
+        transition: outline .15s ease, opacity .15s ease
+        &:nth-child(-n+3)
+            margin-top: 0
+        &:hover
+            outline: 1px solid #666666
+            opacity: 1
+            &::after
+                background-color: rgba(0, 0, 0, .5)
+        span
+            color: #eeeeee
+            &:first-child
+                text-transform: uppercase
+                font-size: 24px
+                +Bold
+            &:last-child
+                font-size: 22px

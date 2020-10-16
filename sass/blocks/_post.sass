@@ -1,0 +1,56 @@
+.post
+    &__header
+        height: 600px
+        position: relative
+        margin-bottom: 15px
+        outline: 1px solid #333333
+        transition: outline .15s ease
+        &:hover
+            outline: 1px solid #666666
+            .post__header__background
+                filter: brightness(60%)
+        &__background
+            height: 100%
+            background-repeat: no-repeat
+            background-size: cover
+            box-shadow: inset 0px -100px 100px 0px rgba(0,0,0,0.7)
+            background-position: 100% 100%
+            filter: brightness(40%)
+            transition: filter .15s ease
+        &__title
+            position: absolute
+            left: 15px
+            bottom: 15px
+            p
+                margin: 0
+                &:first-child
+                    font-size: 28px
+                &:last-child
+                    font-size: 44px
+                    +Medium
+    &__content
+        &__text
+            font-size: 24px
+            margin-top: 10px
+            box-shadow: 0 5px 15px rgba(0,0,0,.1)
+            line-height: 1.5
+            padding: 15px
+            background-color: #191919
+            border: 1px solid #252525
+            transition: background-color .15s ease
+            &:first-child
+                margin-top: 0
+            &:hover
+                background-color: #222222
+            p
+                margin: 0
+    &__news__list
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    .homepage__news__post
+        width: 100%
+        &:nth-child(-n+2)
+            margin-top: 10px
+        &:first-child
+            margin-top: 0

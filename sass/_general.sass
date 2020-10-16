@@ -21,7 +21,7 @@
     -webkit-tap-highlight-color: transparent
     &::selection
         background-color: #aeaeae
-    
+
 html, body
     padding: 0
     margin: 0
@@ -32,11 +32,23 @@ html, body
     &::selection
         background-color: #333333
 
+html
+    height: 100vh
+
+body
+    display: flex
+    flex-direction: column
+    height: 100%
+    &.background
+        overflow: visible
+        -webkit-mask-image: -webkit-linear-gradient(top,black 20%,transparent 99%)
+
 h3
     font-weight: normal
 
 section
     padding: 15px 0
+    flex: 1 0 auto
 
 .preloader
     display: contents
@@ -79,6 +91,12 @@ section
 .half-block
     width: calc(100% / 2 - 7.5px)
 
+.third-block
+    width: calc(100% / 3 - 7.5px)
+
+.two-thirds-block
+    width: calc(100% / 3 * 2 - 7.5px)
+
 .block-title
     display: flex
     align-items: center
@@ -118,6 +136,34 @@ section
     &:first-child
         margin-top: 0
 
+.pagination
+    margin-top: 15px
+    display: flex
+    justify-content: center
+    a
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 60px
+        height: 60px
+        text-decoration: none
+        margin-right: 10px
+        color: #eeeeee
+        font-size: 24px
+        +Medium
+        outline: 1px solid #333333
+        transition: outline .15s ease
+        &:hover
+            outline: 1px solid #666666
+        &.current
+            outline: 1px solid #666666
+            background-color: rgba(245,245,245,0.1)
+            cursor: default
+        &.disabled
+            opacity: .5
+        &:last-child
+            margin-right: 0
+
 @media (max-width: 1600px)
     ::-webkit-scrollbar
         width: 7px
@@ -129,11 +175,24 @@ section
         margin: 0 0 15px 0
         a
             font-size: 12px
+    .pagination a
+        width: 40px
+        height: 40px
+        margin-right: 5px
+        font-size: 16px
 
 @media (max-width: 992px)
-    .half-block
+    .half-block, .third-block, .two-thirds-block
         width: 100%
+    .half-block
         &:first-child
             margin-top: 15px
     .double-block
-        flex-wrap: wrap-reverse
+        &.reverse
+            flex-wrap: wrap-reverse
+            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child
+                margin-top: 15px
+        &.not-reverse
+            flex-wrap: wrap
+            .half-block:last-child, .third-block:last-child, .two-thirds-block:last-child
+                margin-top: 15px
