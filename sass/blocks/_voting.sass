@@ -1,0 +1,86 @@
+.voting
+    &__link
+        width: calc(100% / 2 - 2.5px)
+        padding: 25px 0
+        font-size: 24px
+        margin-top: 5px
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        text-decoration: none
+        color: #ffffff
+        position: relative
+        background: rgba(245,245,245,0.1)
+        border: none
+        transition: background .15s ease, color .15s ease
+        +Medium
+        &:nth-child(-n+2)
+            margin-top: 0
+        &:hover
+            background: #ffffff
+            color: #333333
+        i
+            font-size: 26px
+            position: absolute
+            right: 15px
+            top: 15px
+    &__top
+        &__list
+            margin-top: 15px
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__place
+            width: calc(100% / 3 - 6.66px)
+            padding: 15px 0
+            margin-top: 10px
+            background: rgba(245,245,245,0.02)
+            outline: 1px solid #333333
+            display: flex
+            align-items: center
+            flex-direction: column
+            justify-content: center
+            transition: outline .15s ease, background .15s ease
+            cursor: default
+            +Medium
+            &:nth-child(-n+3)
+                margin-top: 0
+            &:hover
+                outline: 1px solid #666666
+                background: rgba(0,0,0,0.01)
+            p
+                &:first-child
+                    font-size: 26px
+                    +Regular
+                &:last-child
+                    color: #fda100
+        &__voter
+            display: block
+            text-align: center
+            padding: 15px
+            width: calc(100% / 3 - 6.66px)
+            margin-top: 10px
+            outline: 1px solid #333333
+            background: rgba(245,245,245,0.02)
+            text-decoration: none
+            border: none!important
+            color: #eeeeee
+            transition: outline .15s ease, background .15s ease
+            &:hover
+                outline: 1px solid #666666
+                color: #eeeeee!important
+                background: rgba(0,0,0,0.01)
+            &:nth-child(-n+3)
+                margin-top: 0
+            img
+                width: 72px
+                height: 72px
+                border-radius: 3px
+            &__info p
+                margin: 0
+                &:nth-child(1)
+                    font-size: 24px
+                    +Medium
+                &:nth-child(2)
+                    font-size: 22px

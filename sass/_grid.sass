@@ -154,6 +154,29 @@
                 padding-bottom: 3px
                 i
                     margin-right: 5px
+    .voting
+        &__link
+            padding: 15px 0
+            font-size: 16px
+            i
+                font-size: 18px
+                right: 5px
+                top: 5px
+        &__top
+            &__list
+                &__place
+                    p
+                        &:first-child
+                            font-size: 18px
+            &__voter
+                img
+                    width: 56px
+                    height: 56px
+                &__info p
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
 
 @media (max-width: 1200px)
     .header
@@ -287,6 +310,48 @@
                     font-size: 24px
         &__news__list
             .homepage__news__post
+                width: 100%
+                &:nth-child(-n+2)
+                    margin-top: 10px
+                &:first-child
+                    margin-top: 0
+    .voting
+        &__link
+            width: 100%
+            &:nth-child(-n+2)
+                margin-top: 5px
+            &:first-child
+                margin-top: 0
+        &__top
+            &__place
+                width: calc(100% / 2 - 5px)
+                &:nth-child(-n+3)
+                    margin-top: 10px
+                &:nth-child(-n+2)
+                    margin-top: 0
+                p
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
+            &__voter
+                width: calc(100% / 2 - 5px)
+                &:nth-child(-n+3)
+                    margin-top: 10px
+                &:nth-child(-n+2)
+                    margin-top: 0
+
+@media (max-width: 375px)
+    .homepage
+        &__voter
+            width: 100%
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0
+    .voting
+        &__top
+            &__voter
                 width: 100%
                 &:nth-child(-n+2)
                     margin-top: 10px

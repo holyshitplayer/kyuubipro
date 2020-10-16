@@ -37,7 +37,7 @@ body
     flex-direction: column
     height: 100vh
     position: relative
-    background: linear-gradient(rgba(20,20,20,0.92), rgba(20,20,20,0.92)), url('../img/backgrounds/body.webp')
+    background: linear-gradient(rgba(20,20,20,0.85), rgba(20,20,20,0.85)), url('../img/backgrounds/body.webp')
     background-attachment: fixed
     background-repeat: no-repeat
     background-size: cover
@@ -80,7 +80,7 @@ section
         left: -1px
         right: -1px
         z-index: -1
-        background-color: rgba(0, 0, 0, .75)
+        background-color: rgba(0, 0, 0, .7)
 
 .double-block
     display: flex
@@ -105,7 +105,7 @@ section
     font-size: 26px
     position: relative
     margin: 0 0 15px 0
-    padding: 0 0 8px 0
+    padding: 0 0 5px 0
     &::after
         content: ''
         position: absolute
@@ -176,13 +176,12 @@ section
     &:hover
         background-color: rgba(245, 245, 245, .05)
     p
-        font-size: 22px
+        font-size: 24px
         margin: 0
         &.block-text__title
-            font-size: 24px
             padding-bottom: 10px
             +Bold
-    a
+    a.text-link
         font-size: 24px
         text-decoration: none
         margin-top: 10px
@@ -221,10 +220,8 @@ section
         font-size: 16px
     .block-text
         p
-            font-size: 14px
-            &.block-text__title
-                font-size: 16px
-        a
+            font-size: 16px
+        a.text-link
             font-size: 16px
             padding: 8px
 
@@ -241,14 +238,14 @@ section
                 margin-top: 15px
         &.not-reverse
             flex-wrap: wrap
+            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child
+                margin-top: 0
             .half-block:last-child, .third-block:last-child, .two-thirds-block:last-child
                 margin-top: 15px
     .block-text
         p
-            font-size: 12px
-            &.block-text__title
-                font-size: 14px
-        a
+            font-size: 14px
+        a.text-link
             font-size: 14px
             padding: 5px
 
