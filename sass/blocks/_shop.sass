@@ -1,0 +1,137 @@
+.shop
+    &__server
+        width: calc(100% / 2 - 5px)
+        padding: 45px 0
+        display: flex
+        justify-content: center
+        flex-direction: column
+        align-items: center
+        margin-top: 10px
+        outline: 1px solid #333333
+        filter: brightness(85%)
+        text-decoration: none
+        transition: outline .15s ease, filter .15s ease
+        &:nth-child(-n+2)
+            margin-top: 0
+        &:hover
+            outline: 1px solid #666666
+            filter: brightness(100%)
+            &::after
+                background-color: rgba(0, 0, 0, .6)
+        &__list
+            margin-top: 15px
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__title
+            font-size: 24px
+            margin: 0
+            text-transform: uppercase
+            +Bold
+        &__description
+            font-size: 22px
+            margin: 25px 0 0 0
+            text-align: center
+            span
+                color: #fda100
+                +Bold
+    &__content
+        width: calc(75% - 7.5px)
+        .pagination
+            margin-top: 0
+        &__items
+            margin: 10px 0
+            display: flex
+            flex-wrap: wrap
+            &__item
+                width: calc(100% / 5 - 8px)
+                text-align: center
+                background-color: rgba(245,245,245,0.02)
+                text-decoration: none
+                color: #eeeeee
+                outline: 1px solid #333333
+                padding: 15px
+                transition: outline .15s ease, background-color .15s ease
+                margin: 10px 10px 0 0
+                +Medium
+                &:nth-child(-n+5)
+                    margin-top: 0
+                &:nth-child(5n)
+                    margin-right: 0
+                &:hover
+                    outline: 1px solid #666666
+                    background-color: rgba(245,245,245,0.1)
+                img
+                    width: 96px
+                    padding-bottom: 25px
+                h6
+                    margin: 0
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    font-size: 24px
+                    +Medium
+                p
+                    font-size: 24px
+                    margin: 15px 0 0 0
+    &__menu
+        width: calc(25% - 7.5px)
+        &__info
+            text-align: center
+            cursor: default
+            p:first-child
+                color: #fda100
+                font-size: 26px
+                +Bold
+            p:last-child
+                font-size: 22px
+        &__cart
+            display: block
+            text-align: center
+            padding: 25px
+            font-size: 24px
+            outline: 1px solid #333333
+            background: rgba(245,245,245,0.02)
+            text-decoration: none
+            color: #eeeeee
+            transition: outline .15s ease, background .15s ease
+            +Medium
+            &:hover
+                outline: 1px solid #666666
+                color: #eeeeee!important
+                background: rgba(0,0,0,0.01)
+        &__search
+            margin-top: 10px
+            position: relative
+            i
+                right: 10px
+                top: 50%
+                transform: translateY(-50%)
+                position: absolute
+        &__categories
+            margin-top: 10px
+            span
+                display: block
+                margin-top: 10px
+                font-size: 22px
+                +Bold
+                &:first-child
+                    margin-top: 0
+            a
+                background-color: rgba(245,245,245,0.02)
+                margin-top: 10px
+                font-size: 22px
+                display: block
+                text-decoration: none
+                color: #eeeeee
+                padding: 15px
+                outline: 1px solid #333333
+                transition: outline .15s ease, background-color .15s ease
+                +Medium
+                &:hover
+                    outline: 1px solid #666666
+                    background-color: rgba(245,245,245,0.1)
+                &.current
+                    outline: 1px solid #666666
+                    background-color: rgba(245,245,245,0.1)
+                    cursor: default
