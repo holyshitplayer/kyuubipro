@@ -110,3 +110,11 @@ if ($('.pulse-color').length) {
         pulseShadowAnimations
     );
 };
+
+$('.server__mods').masonry({
+    // options
+    itemSelector: '.server__mod',
+    columnWidth: '.server__mod',
+    percentPosition: true,
+    gutter: 10
+});

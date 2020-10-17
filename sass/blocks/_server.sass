@@ -1,0 +1,58 @@
+.server
+    &__info
+        margin-top: 15px
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        &.forbidden
+            margin-top: 0
+        &__block
+            width: calc(100% / 2 - 5px)
+            padding: 15px 0
+            margin-top: 10px
+            background: rgba(245,245,245,0.02)
+            outline: 1px solid #333333
+            display: flex
+            text-align: center
+            align-items: center
+            flex-direction: column
+            justify-content: center
+            transition: outline .15s ease, background .15s ease
+            cursor: default
+            &:nth-child(-n+2)
+                margin-top: 0
+            &:hover
+                outline: 1px solid #666666
+                background: rgba(0,0,0,0.01)
+            p
+                &:first-child
+                    color: #fda100
+                    +Medium
+                &:last-child
+                    font-size: 22px
+    &__mod
+        text-align: center
+        width: calc(100% / 2 - 5px)
+        padding: 15px 0
+        margin-top: 10px
+        background: rgba(245,245,245,0.02)
+        outline: 1px solid #333333
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        transition: outline .15s ease, background .15s ease
+        cursor: default
+        &:nth-child(-n+2)
+            margin-top: 0
+        &:hover
+            outline: 1px solid #666666
+            background: rgba(0,0,0,0.01)
+        p
+            color: #fda100
+            +Medium
+        &__addons
+            p
+                font-size: 22px
+                color: #eeeeee
+                +Regular
