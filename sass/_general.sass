@@ -96,6 +96,12 @@ section
 .two-thirds-block
     width: calc(100% / 3 * 2 - 7.5px)
 
+.fourth-block
+    width: calc(25% - 7.5px)
+
+.three-quarters-block
+    width: calc(75% - 7.5px)
+
 .block-title
     display: flex
     align-items: center
@@ -205,6 +211,11 @@ section
     width: 75%
     margin: 0 auto
 
+.tab
+    display: none
+    &.active
+        display: inherit
+
 
 @media (max-width: 1600px)
     ::-webkit-scrollbar
@@ -240,13 +251,13 @@ section
     .double-block
         &.reverse
             flex-wrap: wrap-reverse
-            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child
+            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child.half-block:first-child, .fourth-block:first-child, .three-quarters-block:first-child
                 margin-top: 15px
         &.not-reverse
             flex-wrap: wrap
-            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child
+            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child, .fourth-block:first-child, .three-quarters-block:first-child
                 margin-top: 0
-            .half-block:last-child, .third-block:last-child, .two-thirds-block:last-child
+            .half-block:last-child, .third-block:last-child, .two-thirds-block:last-child, .fourth-block:last-child, .three-quarters-block:last-child
                 margin-top: 15px
     .block-text
         p
@@ -254,6 +265,10 @@ section
         a.text-link
             font-size: 14px
             padding: 5px
+    .fourth-block
+        width: calc(30% - 7.5px)
+    .three-quarters-block
+        width: calc(70% - 7.5px)
 
 @media (max-width: 768px)
     body
@@ -261,3 +276,13 @@ section
     .form-block
         width: 100%
         margin: 0
+    .fourth-block
+        width: 100%
+    .three-quarters-block
+        width: 100%
+
+@media (max-width: 576px)
+    .pagination a
+        width: 36px
+        height: 36px
+        font-size: 14px

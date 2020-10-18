@@ -1,0 +1,168 @@
+.donate
+    &__menu
+        display: flex
+        flex-flow: column wrap
+        p
+            font-size: 22px
+            a
+                text-decoration: none
+                color: #fda100
+                border-bottom: 1px solid transparent
+                transition: border-color .15s ease
+                &:hover
+                    border-color: #fda100
+        &__link
+            padding: 25px 0
+            font-size: 24px
+            margin-top: 5px
+            display: block
+            text-align: center
+            text-decoration: none
+            color: #ffffff
+            background: rgba(245,245,245,0.1)
+            transition: background .15s ease, color .15s ease
+            +Medium
+            &:hover
+                background: #ffffff
+                color: #333333
+        &__abilities
+            margin-top: 10px
+        &__ability
+            text-align: center
+            background-color: rgba(245,245,245,0.02)
+            margin-top: 5px
+            display: block
+            text-decoration: none
+            color: #eeeeee
+            padding: 15px
+            cursor: pointer
+            outline: 1px solid #333333
+            transition: outline .15s ease, background-color .15s ease
+            +Medium
+            &:hover
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+            &.active
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+                cursor: default
+            i
+                margin-left: 5px
+        &__privileges
+            a
+                text-align: center
+                margin-top: 5px
+                font-size: 24px
+                display: block
+                text-decoration: none
+                color: #eeeeee
+                filter: contrast(0)
+                padding: 25px
+                cursor: pointer
+                outline: 1px solid #333333
+                transition: outline .15s ease, filter .15s ease
+                +Medium
+                &:hover
+                    filter: contrast(1)
+                &.active
+                    background-color: rgba(245,245,245,0.1)
+                    cursor: default
+                    filter: contrast(1)
+    &__privilege
+        &__title
+            margin: 0
+            font-size: 32px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding-bottom: 15px
+            +Bold
+            &.kits
+                margin-top: 15px
+                font-size: 28px
+                +Medium
+            i
+                font-size: 28px
+        &__ability
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 5px
+            margin-top: 5px
+            cursor: default
+            background: rgba(245,245,245,0.02)
+            outline: 1px solid #333333
+            transition: outline .15s ease, background .15s ease
+            &:hover
+                outline: 1px solid #666666
+                background: rgba(0,0,0,0.01)
+            &:first-child
+                margin-top: 0
+            &__content
+                width: 90%
+                padding: 5px
+                p:last-child
+                    font-size: 22px
+                    color: #aaaaaa
+                &.price
+                    +Medium
+            &__value
+                padding: 5px
+                font-size: 26px
+                &.price
+                    +Medium
+                i
+                    font-size: 28px
+        &__kits
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__kit
+            width: calc(100% / 2 - 2.5px)
+            padding: 5px
+            background: rgba(245,245,245,0.02)
+            outline: 1px solid #333333
+            transition: outline .15s ease, background-color .15s ease
+            margin-top: 5px
+            &:hover
+                background: rgba(0,0,0,0.01)
+                outline: 1px solid #666666
+            &:nth-child(-n+2)
+                margin-top: 0
+            &__title
+                text-align: center
+                padding: 10px
+                +Medium
+            &__items
+                display: flex
+                flex-wrap: wrap
+            &__item
+                width: calc(100% / 9 - 5px)
+                height: auto
+                background-color: rgba(0,0,0,.3)
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-right: calc(5px * 9 / 8)
+                margin-top: calc(5px * 9 / 8)
+                position: relative
+                opacity: .7
+                transition: background-color .15s ease, opacity .15s ease
+                &:nth-child(9n)
+                    margin-right: 0
+                &:nth-child(-n+9)
+                    margin-top: 0
+                &:hover
+                    background-color: rgba(0,0,0,.8)
+                    opacity: 1
+                img
+                    width: 100%
+                    padding: 8px
+                span
+                    font-size: 24px
+                    color: #ffffff
+                    position: absolute
+                    top: 3px
+                    right: 3px
+                    cursor: default
+                    +Medium
