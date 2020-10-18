@@ -141,10 +141,6 @@ if ($('.donate__menu__privileges').length) {
         let tab = '#' + $(this).attr('data-tab');
         $(tab).find('.privilege-color').css({ color: color, textShadow: shadow });
     });
-    $('.donate__privilege__kit__item').css('height', $('.donate__privilege__kit__item').css('width'));
-    window.addEventListener('resize', function() {
-        $('.donate__privilege__kit__item').css('height', $('.donate__privilege__kit__item').css('width'));
-    });
 };
 
 if ($('.tabs').length) {
