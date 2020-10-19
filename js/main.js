@@ -154,3 +154,21 @@ if ($('.tabs').length) {
 		$("#"+tab_id).addClass('active');
 	})
 };
+
+if ($('.improvement').length) {
+    $('.improvement__mark').click(function () {
+        $('.improvement__mark').removeClass('current');
+        $(this).addClass('current');
+    });
+    let total = $('.improvement__comment-field').attr('maxlength');
+    $('span.total').text(total);
+    $('span.left').text(Number(total) - Number($('.improvement__comment-field').val().length));
+    $('.improvement__comment-field').keyup(function () {
+        let left = Number(total) - Number($(this).val().length);
+        $('span.left').text(left);
+    });
+    $('.improvement__mark').css('height', $('.improvement__mark').css('width'));
+    window.addEventListener('resize', () => {
+        $('.improvement__mark').css('height', $('.improvement__mark').css('width'));
+    });
+};

@@ -1,0 +1,151 @@
+.improvements
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin-top: 15px
+    &__improvement
+        display: block
+        width: calc(100% / 3 - 6.67px)
+        text-decoration: none
+        color: #eeeeee
+        outline: 1px solid #333333
+        margin-top: 10px
+        margin-right: 10px
+        background: rgba(245,245,245,0.02)
+        filter: brightness(85%)
+        transition: outline .15s ease, filter .15s ease
+        &:nth-child(3n)
+            margin-right: 0
+        &:nth-child(-n+3)
+            margin-top: 0
+        &:hover
+            outline: 1px solid #666666
+            filter: brightness(100%)
+        &.solo
+            width: 100%
+            margin-top: 10px
+        &__title
+            margin: 0
+            font-size: 24px
+            text-align: center
+            padding: 30px 0
+            background: rgba(245,245,245,0.1)
+            p
+                margin: 0
+                &:first-child
+                    text-transform: uppercase
+                    +Bold
+                span
+                    color: #fda100
+                    +Bold
+        &__content
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 15px
+            img
+                width: 72px
+                height: 72px
+                margin-right: 10px
+                border-radius: 3px
+            p
+                margin: 0
+                &:first-child
+                    font-size: 24px
+                    +Medium
+                &:last-child
+                    font-size: 22px
+
+.improvement
+    &__marks
+        p
+            margin: 0
+            &:first-child
+                padding-bottom: 3px
+                +Medium
+            &:last-child
+                display: flex
+                flex-wrap: wrap
+    &__mark
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        width: 40px
+        height: 40px
+        margin-right: 5px
+        font-size: 16px
+        outline: 1px solid #333333
+        transition: outline .15s ease
+        +Medium
+        &:hover
+            outline: 1px solid #666666
+        &.current
+            outline: 1px solid #666666
+            background-color: rgba(245,245,245,0.1)
+            cursor: default
+        &:last-child
+            margin-right: 0
+    &__comment
+        &__title
+            font-size: 16px
+            margin: 15px 0 10px 0
+            +Bold
+        &__content
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            align-items: flex-end
+    form
+        textarea
+            width: 100%
+            height: 100px
+            outline: 1px solid #333333
+            background-color: rgba(0,0,0,.1)
+            color: #eeeeee
+            resize: vertical
+            border: none
+            font-size: 16px
+            transition: outline .15s ease
+            padding: 5px
+            +Regular
+            &:hover, &:focus
+                outline: 1px solid #666666
+        button
+            width: 250px
+    &__textarea
+        div
+            font-size: 12px
+            text-align: right
+    &__comments
+        .block-text
+            margin-top: 5px
+    &__comment
+        display: flex
+        align-items: flex-start
+        a img
+            display: block
+            width: 64px
+            border-radius: 3px
+        &__info
+            margin-left: 10px
+            &__title
+                display: flex
+                a
+                    text-decoration: none
+                    +Medium
+                span
+                    font-size: 14px
+                    margin-left: 10px
+                    display: flex
+                    align-items: center
+                    +Bold
+                    i
+                        font-size: 12px
+            p.improvement__comment__info__date
+                font-size: 12px
+                color: #aaaaaa
+                +Medium
+            p.improvement__comment__info__text
+                margin-top: 3px
+                font-size: 14px

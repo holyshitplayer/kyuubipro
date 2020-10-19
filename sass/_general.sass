@@ -12,8 +12,6 @@
     background-color: #444444
 ::-webkit-scrollbar-corner
     background-color: #999
-::-webkit-resizer
-    background-color: #666
     
 *
     box-sizing: border-box
@@ -155,9 +153,9 @@ section
         margin-right: 10px
         color: #eeeeee
         font-size: 24px
-        +Medium
         outline: 1px solid #333333
         transition: outline .15s ease
+        +Medium
         &:hover
             outline: 1px solid #666666
         &.current
@@ -165,6 +163,7 @@ section
             background-color: rgba(245,245,245,0.1)
             cursor: default
         &.disabled
+            cursor: default
             opacity: .5
         &:last-child
             margin-right: 0

@@ -42,6 +42,7 @@
                 img
                     width: 96px
                     height: 96px
+                    margin-right: 20px
                 div p
                     &:first-child
                         font-size: 16px
@@ -264,6 +265,20 @@
                 &__item
                     span
                         font-size: 16px
+    .improvements
+        &__improvement
+            &__title
+                font-size: 16px
+                padding: 20px 0
+            &__content
+                img
+                    width: 56px
+                    height: 56px
+                p
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
 
 @media (max-width: 1200px)
     .header
@@ -354,6 +369,25 @@
                         margin-right: 0
                     &:nth-child(-n+5)
                         margin-top: 0
+    .improvements
+        &__improvement
+            width: calc(100% / 2 - 5px)
+            &:nth-child(3n)
+                margin-right: 10px
+            &:nth-child(-n+3)
+                margin-top: 10px
+            &:nth-child(2n)
+                margin-right: 0
+            &:nth-child(-n+2)
+                margin-top: 0
+            &.solo
+                margin-top: 10px
+    .improvement
+        form button
+            margin-left: auto
+            margin-top: 10px
+        .three-quarters-block
+            margin-top: 0!important
 
 @media (max-width: 768px)
     .news
@@ -384,6 +418,13 @@
                         margin-right: 0
                     &:nth-child(-n+6)
                         margin-top: 0
+    .improvements__improvement.solo
+        display: none
+    .improvement
+        .three-quarters-block
+            margin-top: 15px!important
+        .fourth-block .block-title
+            display: none
 
 @media (max-width: 576px)
     .header
@@ -578,6 +619,25 @@
                     margin-top: 0
                 &__title
                     font-size: 14px
+    .improvements
+        &__improvement
+            width: 100%
+            margin-right: 0
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0
+    .improvement
+        &__marks
+            width: 100%
+        &__mark
+            width: calc(100% / 10 - 4.5px)
+            height: auto
+            font-size: 12px
+            &:last-child
+                margin-right: 0
+        form button
+            width: 100%
 
 @media (max-width: 375px)
     .homepage
