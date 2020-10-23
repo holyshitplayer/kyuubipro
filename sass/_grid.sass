@@ -279,6 +279,76 @@
                         font-size: 16px
                     &:last-child
                         font-size: 14px
+    .guilds
+        &__guild
+            &__title
+                font-size: 16px
+                padding: 20px 0
+            &__info p span
+                font-size: 16px
+                &:first-child
+                    font-size: 14px
+            &__players
+                span
+                    font-size: 14px
+            &__players-total
+                height: 12px
+        &__menu-link
+            padding: 15px 0
+            font-size: 16px
+    .guild
+        &__header
+            height: 250px
+            &__title
+                font-size: 36px
+            &__motd
+                font-size: 16px
+        &__menu
+            &__link
+                padding: 15px
+                font-size: 16px
+                span:last-child
+                    font-size: 12px
+        &__staff-user
+            a img
+                width: 48px
+            &__info
+                a
+                    font-size: 16px
+                p
+                    font-size: 14px
+        &__player
+            img
+                width: 56px
+                height: 56px
+            &__info p
+                &:first-child
+                    font-size: 16px
+                &:last-child
+                    font-size: 14px
+        &__setting
+            &__content
+                p
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
+            &__buttons
+                span
+                    padding: 10px 0
+                    font-size: 16px
+                    span
+                        &:last-child
+                            font-size: 12px
+            form
+                input
+                    padding: 10px
+                label.color-radio
+                    width: 24px
+                    height: 24px
+                label.file-upload
+                    padding: 10px 20px
+                    font-size: 16px
 
 @media (max-width: 1200px)
     .header
@@ -312,6 +382,26 @@
                         margin-right: 0
                     &:nth-child(-n+6)
                         margin-top: 0
+    .guilds
+        &__guild
+            width: calc(100% / 2 - 5px)
+            &:nth-child(-n+3)
+                margin-top: 10px
+            &:nth-child(3n)
+                margin-right: 10px
+            &:nth-child(-n+2)
+                margin-top: 0
+            &:nth-child(2n)
+                margin-right: 0
+    .guild
+        &__setting
+            &__content, &__buttons
+                width: 100%
+            &__buttons
+                margin-top: 5px
+            form
+                label.file-upload
+                    display: block
 
 @media (max-width: 992px)
     .header
@@ -400,9 +490,6 @@
     .post
         &__header
             height: 250px
-    .shop
-        &__content
-            margin-top: 15px
     .donate
         &__privilege
             &__kit
@@ -638,6 +725,23 @@
                 margin-right: 0
         form button
             width: 100%
+    .guilds
+        &__guild
+            width: 100%
+            margin-right: 0
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0
+    .guild
+        &__header
+            height: 200px
+        &__player
+            width: calc(100% / 2 - 5px)
+            &:nth-child(-n+3)
+                margin-top: 10px
+            &:nth-child(-n+2)
+                margin-top: 0
 
 @media (max-width: 375px)
     .homepage
@@ -655,3 +759,10 @@
                     margin-top: 10px
                 &:first-child
                     margin-top: 0
+    .guild
+        &__player
+            width: 100%
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:first-child
+                margin-top: 0

@@ -197,6 +197,14 @@ section
         &:hover
             color: #fda10f
             border-color: #fda100
+    a.orange-link
+        font-size: 24px
+        text-decoration: none
+        color: #fda10f
+        border-bottom: 1px solid transparent
+        transition: border-color .15s ease
+        &:hover
+            border-color: #fda100
     &.warning
         border-color: #dc143c
         .block-text__title
@@ -238,6 +246,8 @@ section
         a.text-link
             font-size: 16px
             padding: 8px
+        a.orange-link
+            font-size: 16px
     .form-block
         width: 50%
 
@@ -250,7 +260,7 @@ section
     .double-block
         &.reverse
             flex-wrap: wrap-reverse
-            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child.half-block:first-child, .fourth-block:first-child, .three-quarters-block:first-child
+            .half-block:first-child, .third-block:first-child, .two-thirds-block:first-child.half-block:first-child
                 margin-top: 15px
         &.not-reverse
             flex-wrap: wrap
@@ -279,6 +289,15 @@ section
         width: 100%
     .three-quarters-block
         width: 100%
+    .double-block
+        &.reverse
+            .fourth-block:first-child, .three-quarters-block:first-child
+                margin-top: 15px
+        &.not-reverse
+            .fourth-block:first-child, .three-quarters-block:first-child
+                margin-top: 0
+            .fourth-block:last-child, .three-quarters-block:last-child
+                margin-top: 15px
 
 @media (max-width: 576px)
     .pagination a

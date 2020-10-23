@@ -172,3 +172,29 @@ if ($('.improvement').length) {
         $('.improvement__mark').css('height', $('.improvement__mark').css('width'));
     });
 };
+
+$('.guilds__guild__players').each(function (e) {
+    let online = Number($(this).attr('data-guild-now'));
+    let total = Number($(this).attr('data-guild-total'));
+    let width = online / total * 100 + '%';
+    $(this).find('.guilds__guild__players-now').css('width', width);
+});
+
+if ($('.guild__content').length) {
+    $('.guild__content').load('guild_parts.html #guild_page');
+    $('.guild__menu__link').click(function() {
+        if ($(this).attr('data-guild-part')) {
+            $('.guild__menu__link').removeClass('current');
+            $(this).addClass('current');
+            let part = $(this).attr('data-guild-part');
+            $('.guild__content').load('guild_parts.html #' + part);
+        };
+    });
+};
+
+$('label.color-radio').each(function() {
+    $(this).on('click', function() {
+        $('label.color-radio').removeClass('active');
+        $(this).addClass('active');
+    });
+});
