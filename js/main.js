@@ -217,23 +217,15 @@ function loadCabinetContent() {
     if (skinInner.getAttribute('data-cape-url') != "none") {
         skinViewer.loadCape(skinInner.getAttribute('data-cape-url'))
     };
-    skinViewer.camera.position.x = -15;
-    skinViewer.camera.position.y = 15;
     // Control objects with your mouse!
-    let control = skinview3d.createOrbitControls(skinViewer);
-    control.enableRotate = true;
-    if (window.innerWidth <= 576) {
-        control.enableRotate = false;
+    if (window.innerWidth > 576) {
+        let control = skinview3d.createOrbitControls(skinViewer);
+        control.enableRotate = true;
+        control.enableZoom = false;
+        control.enablePan = false;
+        skinViewer.camera.position.x = -15;
+        skinViewer.camera.position.y = 15;
     };
-    window.addEventListener('resize', function() {
-        if (window.innerWidth <= 576) {
-            control.enableRotate = false;
-        } else {
-            control.enableRotate = true;
-        };
-    });
-    control.enableZoom = false;
-    control.enablePan = false;
     // Add an animation
     let walk = skinViewer.animations.add(skinview3d.WalkingAnimation);
     // Set the speed of an animation
