@@ -222,6 +222,16 @@ function loadCabinetContent() {
     // Control objects with your mouse!
     let control = skinview3d.createOrbitControls(skinViewer);
     control.enableRotate = true;
+    if (window.innerWidth <= 576) {
+        control.enableRotate = false;
+    };
+    window.addEventListener('resize', function() {
+        if (window.innerWidth <= 576) {
+            control.enableRotate = false;
+        } else {
+            control.enableRotate = true;
+        };
+    });
     control.enableZoom = false;
     control.enablePan = false;
     // Add an animation
