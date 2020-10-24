@@ -137,22 +137,22 @@ if ($('.donate__menu__privileges').length) {
         let color = $(this).attr('data-privilege-color');
         let shadow = '0 0 10px ' + color;
         let background = hexToRgbA(color, '.1')
-        $(this).css({ color: color, outlineColor: color, textShadow: shadow, backgroundColor: background});
+        $(this).css({ color: color, outlineColor: color, textShadow: shadow, backgroundColor: background });
         let tab = '#' + $(this).attr('data-tab');
         $(tab).find('.privilege-color').css({ color: color, textShadow: shadow });
     });
 };
 
 if ($('.tabs').length) {
-    $('.tab-link').click(function(){
-		var tab_id = $(this).attr('data-tab');
+    $('.tab-link').click(function () {
+        var tab_id = $(this).attr('data-tab');
 
-		$('.tab-link').removeClass('active');
-		$('.tab').removeClass('active');
+        $('.tab-link').removeClass('active');
+        $('.tab').removeClass('active');
 
-		$(this).addClass('active');
-		$("#"+tab_id).addClass('active');
-	})
+        $(this).addClass('active');
+        $("#" + tab_id).addClass('active');
+    })
 };
 
 if ($('.improvement').length) {
@@ -181,20 +181,85 @@ $('.guilds__guild__players').each(function (e) {
 });
 
 if ($('.guild__content').length) {
+    let preloader = $('.guild__content').attr('data-preloader');
+    $('.guild__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
     $('.guild__content').load('guild_parts.html #guild_page');
-    $('.guild__menu__link').click(function() {
+    $('.guild__menu__link').click(function () {
         if ($(this).attr('data-guild-part')) {
             $('.guild__menu__link').removeClass('current');
             $(this).addClass('current');
             let part = $(this).attr('data-guild-part');
+            $('.guild__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
             $('.guild__content').load('guild_parts.html #' + part);
         };
     });
 };
 
-$('label.color-radio').each(function() {
-    $(this).on('click', function() {
+$('label.color-radio').each(function () {
+    $(this).on('click', function () {
         $('label.color-radio').removeClass('active');
         $(this).addClass('active');
     });
 });
+
+function loadCabinetContent() {
+    $('.background').each(function () {
+        let url = 'url(' + $(this).attr('data-bg-url') + ')'
+        $(this).css('background-image', url);
+    });
+
+    let skinInner = document.getElementById('skin-container');
+    let skinViewer = new skinview3d.FXAASkinViewer(skinInner, {
+        width: 300,
+        height: 400,
+        skin: skinInner.getAttribute('data-skin-url'),
+    });
+    if (skinInner.getAttribute('data-cape-url') != "none") {
+        skinViewer.loadCape(skinInner.getAttribute('data-cape-url'))
+    };
+    skinViewer.camera.position.x = -15;
+    skinViewer.camera.position.y = 15;
+    // Control objects with your mouse!
+    let control = skinview3d.createOrbitControls(skinViewer);
+    control.enableRotate = true;
+    control.enableZoom = false;
+    control.enablePan = false;
+    // Add an animation
+    let walk = skinViewer.animations.add(skinview3d.WalkingAnimation);
+    // Set the speed of an animation
+    walk.speed = 0.3;
+
+    $('.tab-link').click(function () {
+        var tab_id = $(this).attr('data-tab');
+
+        $('.tab-link').removeClass('active');
+        $('.tab').removeClass('active');
+
+        $(this).addClass('active');
+        $("#" + tab_id).addClass('active');
+    });
+
+    let online = Number($('.guilds__guild__players').attr('data-guild-now'));
+    let total = Number($('.guilds__guild__players').attr('data-guild-total'));
+    let width = online / total * 100 + '%';
+    $('.guilds__guild__players').find('.guilds__guild__players-now').css('width', width);
+};
+
+if ($('.user__content').length) {
+    let preloader = $('.user__content').attr('data-preloader');
+    $('.user__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
+    $('.user__content').load('user_parts.html #user_cabinet', loadCabinetContent);
+    $('.user__links a').click(function () {
+        if ($(this).attr('data-user-part')) {
+            $('.user__links a').removeClass('current');
+            $(this).addClass('current');
+            let part = $(this).attr('data-user-part');
+            $('.user__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
+            $('.user__content').load('user_parts.html #' + part, () => {
+                if (part == 'user_cabinet') {
+                    loadCabinetContent();
+                };
+            });
+        };
+    });
+};

@@ -27,6 +27,17 @@
             a
                 padding: 20px 0
                 font-size: 20px
+        &__user
+            &__portrait
+                width: 128px
+                margin-right: 30px
+            &__name
+                font-size: 24px
+            &__online
+                margin: 0 0 5px 0
+                font-size: 14px
+            &__description
+                font-size: 16px
     .homepage
         &__news
             &__post
@@ -349,6 +360,38 @@
                 label.file-upload
                     padding: 10px 20px
                     font-size: 16px
+    .user
+        &__info__block p
+            &:first-child
+                font-size: 16px
+            &:last-child
+                font-size: 14px
+        &__stats
+            &__tabs a span
+                &:first-child
+                    font-size: 16px
+                &:last-child
+                    font-size: 14px
+            &__stat
+                i
+                    font-size: 28px
+                    width: 40px
+                    margin-right: 10px
+                &__text p
+                    &:first-child
+                        font-size: 16px
+                    &:last-child
+                        font-size: 14px
+        &__balance
+            p
+                font-size: 16px
+            a
+                padding: 15px 0
+                font-size: 16px
+        &__links
+            a
+                font-size: 16px
+                padding: 15px
 
 @media (max-width: 1200px)
     .header
@@ -478,6 +521,17 @@
             margin-top: 10px
         .three-quarters-block
             margin-top: 0!important
+    .user
+        &__skin-double
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__skin-half
+            width: calc(100% / 2 - 5px)
+            &:last-child
+                margin-top: 0
+            .block-text.hint
+                display: none
 
 @media (max-width: 768px)
     .news
@@ -524,6 +578,12 @@
                 font-size: 24px
             &__text
                 margin: 10px 0 20px 0
+        &__user
+            &__portrait
+                width: 96px
+                margin-right: 20px
+            &__name
+                font-size: 20px
     .homepage
         &__account
             height: 175px
@@ -742,6 +802,37 @@
                 margin-top: 10px
             &:nth-child(-n+2)
                 margin-top: 0
+    .user
+        &__skin-double
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__skin-half
+            width: 100%
+            &:last-child
+                margin-top: 15px
+            .block-text.hint
+                display: block
+        &__info__block
+            width: 100%
+            &:nth-child(-n+2)
+                margin-top: 5px
+            &:first-child
+                margin-top: 0
+        &__stats
+            &__tabs
+                a
+                    width: calc(50% - 2.5px)
+                    &:nth-child(4n)
+                        margin-right: 5px
+                    &:nth-child(-n+4)
+                        margin-top: 5px
+                    &:nth-child(2n)
+                        margin-right: 0
+                    &:nth-child(-n+2)
+                        margin-top: 0
+            &__stat
+                width: 100%
 
 @media (max-width: 375px)
     .homepage

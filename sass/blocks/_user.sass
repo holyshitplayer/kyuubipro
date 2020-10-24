@@ -1,0 +1,168 @@
+.header
+    &.userheader
+        min-height: calc(var(--vh, 1vh) * 75)
+        border: none
+    &__user
+        &__portrait
+            outline: 3px solid
+            width: 160px
+            margin-right: 45px
+        &__info
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+        &__name
+            font-size: 32px
+            margin: 0
+            +Medium
+        &__online
+            margin: 0 0 15px 0
+            font-size: 22px
+        &__description
+            margin: 0
+            font-size: 24px
+
+.user
+    &__skin-container
+        text-align: center
+        canvas
+            width: 80%!important
+            height: 80%!important
+            outline: none
+            cursor: grab
+            &:active
+                cursor: grabbing
+    &__info
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        &__block
+            width: calc(100% / 2 - 2.5px)
+            padding: 15px
+            margin-top: 5px
+            outline: 1px solid #333333
+            transition: outline .15s ease
+            &:nth-child(-n+2)
+                margin-top: 0
+            &:hover
+                outline: 1px solid #666666
+                &::after
+                    background-color: rgba(0, 0, 0, .6)
+            p
+                &:first-child
+                    margin: 0
+                    font-size: 24px
+                    +Medium
+                &:last-child
+                    margin: 5px 0 0 0
+                    font-size: 22px
+                    color: #cccccc
+    &__stats
+        .block-text.tabs
+            padding: 0
+        &__tabs
+            display: flex
+            flex-wrap: wrap
+            a
+                width: calc(25% - 3.75px)
+                margin-right: 5px
+                margin-top: 5px
+                cursor: pointer
+                display: block
+                text-align: center
+                background-color: rgba(245,245,245,0.02)
+                padding: 15px
+                outline: 1px solid #333333
+                transition: background-color .15s ease, outline .15s ease
+                &:nth-child(4n)
+                    margin-right: 0
+                &:nth-child(-n+4)
+                    margin-top: 0
+                &:hover
+                    outline: 1px solid #666666
+                    background-color: rgba(245,245,245,0.1)
+                &.active
+                    outline: 1px solid #666666
+                    background-color: rgba(245,245,245,0.1)
+                    cursor: default
+                span
+                    display: block
+                    &:first-child
+                        font-size: 24px
+                        color: #fda100
+                        +Medium
+                    &:last-child
+                        font-size: 22px
+        &__block
+            justify-content: space-between
+            flex-wrap: wrap
+            &.active
+                display: flex
+        &__stat
+            padding: 15px
+            width: 50%
+            display: flex
+            align-items: center
+            transition: background-color .15s ease, outline .15s ease
+            outline: 1px solid transparent
+            cursor: default
+            &:hover
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+            i
+                font-size: 40px
+                width: 60px
+                margin-right: 10px
+            &__text
+                p
+                    &:first-child
+                        font-size: 24px
+                        +Bold
+                    &:last-child
+                        font-size: 22px
+    &__balance
+        padding: 15px
+        p
+            font-size: 24px
+            margin: 0
+            +Medium
+            span
+                color: #fda100
+                +Bold
+        a
+            padding: 25px 0
+            font-size: 24px
+            margin-top: 5px
+            display: block
+            text-align: center
+            text-decoration: none
+            color: #ffffff
+            background: rgba(245,245,245,0.1)
+            transition: background .15s ease, color .15s ease
+            +Medium
+            &:hover
+                background: #ffffff
+                color: #333333
+    &__links
+        margin-top: 15px
+        a
+            text-align: center
+            background-color: rgba(245,245,245,0.02)
+            margin-top: 5px
+            display: block
+            text-decoration: none
+            cursor: pointer
+            color: #eeeeee
+            font-size: 24px
+            padding: 25px
+            outline: 1px solid #333333
+            transition: outline .15s ease, background-color .15s ease
+            +Medium
+            &:hover
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+            &.current
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+                cursor: default
