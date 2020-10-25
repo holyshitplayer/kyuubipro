@@ -245,6 +245,24 @@ function loadCabinetContent() {
     $('.guilds__guild__players').find('.guilds__guild__players-now').css('width', width);
 };
 
+function loadAchievementsContent() {
+    $('.background').each(function () {
+        let url = 'url(' + $(this).attr('data-bg-url') + ')'
+        $(this).css('background-image', url);
+    });
+    $('.user__achievement__progress').each(function () {
+        let progressNow = Number($(this).attr('data-progress-now'));
+        let progressTotal = Number($(this).attr('data-progress-total'));
+        let progressWidth = progressNow / progressTotal * 100 + '%';
+        $(this).find('.user__achievement__progress-now').css('width', progressWidth);
+    });
+    $('.user__achievements a').click(function () {
+        let preloader = $('.user__content').attr('data-preloader');
+        $('.user__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
+        $('.user__content').load('user_parts.html #user_achievements_block');
+    });
+};
+
 if ($('.user__content').length) {
     let preloader = $('.user__content').attr('data-preloader');
     $('.user__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
@@ -258,7 +276,9 @@ if ($('.user__content').length) {
             $('.user__content').load('user_parts.html #' + part, () => {
                 if (part == 'user_cabinet') {
                     loadCabinetContent();
-                };
+                } else if (part == 'user_achievements') {
+                    loadAchievementsContent();
+                }
             });
         };
     });

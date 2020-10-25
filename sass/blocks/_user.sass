@@ -166,3 +166,88 @@
                 outline: 1px solid #666666
                 background-color: rgba(245,245,245,0.1)
                 cursor: default
+    &__achievements
+        display: flex
+        flex-wrap: wrap
+    &__achievement
+        width: calc(100% / 3 - 6.67px)
+        margin-right: 10px
+        margin-top: 10px
+        cursor: pointer
+        display: block
+        color: #eeeeee
+        text-decoration: none
+        padding: 75px 15px
+        outline: 1px solid #333333
+        transition: outline .15s ease
+        &:hover
+            outline: 1px solid #666666
+            &::after
+                background-color: rgba(0, 0, 0, .6)
+        &:nth-child(-n+3)
+            margin-top: 0
+        &:nth-child(3n)
+            margin-right: 0
+        p
+            font-size: 24px
+            margin: 0
+            display: flex
+            justify-content: space-between
+            span
+                +Medium
+                &:last-child
+                    i
+                        margin-right: 5px
+                        color: #fda100
+        &__progress
+            margin-top: 5px
+            width: 100%
+            height: 18px
+            border: 2px solid #eeeeee
+            padding: 3px
+        &__progress-now
+            background-color: #eeeeee
+            height: 100%
+    &__achievement-page
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        &__item
+            width: calc(100% / 2 - 2.5px)
+            margin-top: 5px
+            padding: 15px
+            display: flex
+            align-items: center
+            filter: brightness(80%)
+            transition: background-color .15s ease, outline .15s ease, filter .15s ease
+            outline: 1px solid #333333
+            cursor: default
+            &:nth-child(-n+2)
+                margin-top: 0
+            &:hover
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+                filter: brightness(100%)
+            img
+                width: 96px
+                border-radius: 3px
+                margin-right: 15px
+            div p
+                &:nth-child(1)
+                    margin: 0
+                    font-size: 24px
+                    +Bold
+                &:nth-child(2)
+                    margin: 0
+                    font-size: 22px
+                &:nth-child(3)
+                    margin: 0
+                    font-size: 22px
+                    span
+                        +Medium
+            &.not-completed
+                img
+                    filter: grayscale(100%)
+                &:hover
+                    img
+                        filter: grayscale(0)

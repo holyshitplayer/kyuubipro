@@ -392,6 +392,25 @@
             a
                 font-size: 16px
                 padding: 15px
+        &__achievement
+            padding: 60px 15px
+            p
+                font-size: 16px
+            &__progress
+                height: 12px
+                padding: 2px
+        &__achievement-page
+            &__item
+                img
+                    width: 72px
+                    margin-right: 10px
+                div p
+                    &:nth-child(1)
+                        font-size: 16px
+                    &:nth-child(2)
+                        font-size: 14px
+                    &:nth-child(3)
+                        font-size: 14px
 
 @media (max-width: 1200px)
     .header
@@ -532,6 +551,25 @@
                 margin-top: 0
             .block-text.hint
                 display: none
+        &__achievement-page
+            &__item
+                div p
+                    &:nth-child(1)
+                        font-size: 14px
+                    &:nth-child(2)
+                        font-size: 12px
+                    &:nth-child(3)
+                        font-size: 12px
+        &__achievement
+            width: calc(100% / 2 - 5px)
+            &:nth-child(-n+3)
+                margin-top: 10px
+            &:nth-child(3n)
+                margin-right: 10px
+            &:nth-child(-n+2)
+                margin-top: 0
+            &:nth-child(2n)
+                margin-right: 0
 
 @media (max-width: 768px)
     .news
@@ -835,6 +873,22 @@
                         margin-top: 0
             &__stat
                 width: 100%
+        &__achievement-page
+            &__item
+                width: 100%
+                &:nth-child(-n+2)
+                    margin-top: 5px
+                &:first-child
+                    margin-top: 0
+        &__achievement
+            width: 100%
+            margin-right: 0
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &:nth-child(3n)
+                margin-right: 0
+            &:first-child
+                margin-top: 0
 
 @media (max-width: 375px)
     .homepage
