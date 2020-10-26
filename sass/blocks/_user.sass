@@ -326,3 +326,86 @@
                 padding-top: 5px
                 color: #cccccc
                 +Regular
+    &__customization
+        width: calc(100% / 2 - 5px)
+        margin-right: 10px
+        padding: 15px
+        outline: 1px solid #333333
+        margin-top: 10px
+        text-align: center
+        &:nth-child(-n+2)
+            margin-top: 0
+        &:nth-child(2n)
+            margin-right: 0
+        &__title
+            font-size: 24px
+            color: #fda100
+            cursor: cell
+            margin: 0 0 3px 0
+            +Bold
+        &__description
+            margin: 0
+            color: #cccccc
+            font-size: 20px
+        &__list
+            margin-top: 15px
+            display: flex
+            flex-wrap: wrap
+        a
+            margin-top: 5px
+            text-align: center
+            display: block
+            padding: 20px 0
+            font-size: 24px
+            outline: 1px solid #333333
+            text-decoration: none
+            background: rgba(245,245,245,0.02)
+            color: #eeeeee
+            transition: outline .15s ease, background .15s ease
+            +Medium
+            &:hover
+                outline: 1px solid #666666
+                color: #eeeeee!important
+                background: rgba(245,245,245,0.1)
+            &.disabled
+                opacity: .75
+                cursor: default
+                &:hover
+                    outline: 1px solid #333333
+                    background: rgba(245,245,245,0.02)
+        form
+            margin-top: 10px
+            &.color-radio
+                padding: 10px 0
+            input
+                padding: 20px
+                &.file-upload, &.color-radio
+                    display: none
+        button
+            margin-top: 5px
+        label.file-upload, button
+            text-align: center
+            display: block
+            padding: 20px 0
+            font-size: 24px
+            cursor: pointer
+            outline: 1px solid #333333
+            background: rgba(245,245,245,0.02)
+            color: #eeeeee
+            transition: outline .15s ease, background .15s ease
+            +Medium
+            &:hover
+                outline: 1px solid #666666
+                color: #eeeeee!important
+                background: rgba(245,245,245,0.1)
+        label.color-radio
+            width: 48px
+            height: 48px
+            display: inline-block
+            cursor: pointer
+            transform: scale(0.9)
+            filter: brightness(85%)
+            transition: transform .15s ease, filter .15s ease
+            &:hover, &.active
+                transform: scale(1)
+                filter: brightness(100%)

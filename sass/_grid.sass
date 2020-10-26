@@ -425,6 +425,25 @@
                 font-size: 16px
             &:last-child
                 font-size: 14px
+        &__customization
+            &__title
+                font-size: 16px
+            &__description
+                font-size: 12px
+            a
+                padding: 10px 0
+                font-size: 16px
+            form
+                &.color-radio
+                    padding: 5px 0
+                input
+                    padding: 10px
+            label.file-upload, button
+                padding: 10px 0
+                font-size: 16px
+            label.color-radio
+                width: 24px
+                height: 24px
 
 @media (max-width: 1200px)
     .header
@@ -478,6 +497,16 @@
             form
                 label.file-upload
                     display: block
+    .user
+        &__customization
+            width: 100%
+            margin-right: 0
+            &:first-child
+                margin-top: 0
+            &:nth-child(-n+2)
+                margin-top: 10px
+            &__list
+                margin-top: 5px
 
 @media (max-width: 992px)
     .header
@@ -959,3 +988,9 @@
                 margin-top: 10px
             &:first-child
                 margin-top: 0
+    .user
+        &__customization
+            &__title
+                font-size: 14px
+            &__description
+                font-size: 10px

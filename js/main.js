@@ -180,6 +180,15 @@ $('.guilds__guild__players').each(function (e) {
     $(this).find('.guilds__guild__players-now').css('width', width);
 });
 
+function loadColorLabel() {
+    $('label.color-radio').each(function () {
+        $(this).on('click', function () {
+            $('label.color-radio').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+};
+
 if ($('.guild__content').length) {
     let preloader = $('.guild__content').attr('data-preloader');
     $('.guild__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
@@ -190,17 +199,14 @@ if ($('.guild__content').length) {
             $(this).addClass('current');
             let part = $(this).attr('data-guild-part');
             $('.guild__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
-            $('.guild__content').load('guild_parts.html #' + part);
+            $('.guild__content').load('guild_parts.html #' + part, () => {
+                if (part == 'guild_customization') {
+                    loadColorLabel();
+                };
+            });
         };
     });
 };
-
-$('label.color-radio').each(function () {
-    $(this).on('click', function () {
-        $('label.color-radio').removeClass('active');
-        $(this).addClass('active');
-    });
-});
 
 function loadCabinetContent() {
     $('.background').each(function () {
@@ -288,6 +294,8 @@ if ($('.user__content').length) {
                     loadAchievementsContent();
                 } else if (part == 'user_privileges') {
                     loadPrivilegesContent();
+                } else if (part == 'user_customization') {
+                    loadColorLabel();
                 };
             });
         };

@@ -561,5 +561,83 @@
 </div>
 
 <div id="user_customization">
-    <h3 style="text-align: center;">Персонализация</h3>
+    <h3 class="block-title"><span>Персонализация</span></h3>
+    <div class="block-text">
+        <p>Добро пожаловать на страницу кастомизации! Надоели одни и те же изображения на блоках сайта? Надоели одни и
+            те же изображения на шапках сайта? Измените их сами!</p>
+        <p>Здесь вы сможете загрузить свои изображения на выбранный раздел, изменить прелоадер и цвет прелоадера,
+            изменить шапку на главной странице и в личном кабинете, установить собственное изображение аватара, цвет
+            обводки изображения аватара, а также описание профиля.</p>
+    </div>
+    <div class="block-text hint">
+        <p class="block-text__title">Подсказка</p>
+        <p>Для просмотра текущего установленного элемента необходимо всего лишь навести курсор на заголовок настройки!
+        </p>
+    </div>
+    <div class="user__customization__list">
+        <div class="user__customization">
+            <p class="user__customization__title">Изображение профиля</p>
+            <p class="user__customization__description">Рекомендуемый формат изображения 1х1</p>
+            <form>
+                <label class="file-upload"><input type="file" class="file-upload">Загрузить изображение</label>
+            </form>
+            <a href="#" class="disabled">По умолчанию</a>
+        </div>
+        <div class="user__customization">
+            <p class="user__customization__title">Шапка профиля</p>
+            <p class="user__customization__description">Рекомендуемый формат изображения 3х1</p>
+            <form>
+                <label class="file-upload"><input type="file" class="file-upload">Загрузить изображение</label>
+            </form>
+            <a href="#" class="disabled">По умолчанию</a>
+        </div>
+        <div class="user__customization">
+            <p class="user__customization__title">Блок с балансом в меню профиля</p>
+            <p class="user__customization__description">Рекомендуемый формат изображения 3x2</p>
+            <form>
+                <label class="file-upload"><input type="file" class="file-upload">Загрузить изображение</label>
+            </form>
+            <a href="#" class="disabled">По умолчанию</a>
+        </div>
+        <div class="user__customization">
+            <p class="user__customization__title">Описание профиля</p>
+            <p class="user__customization__description">Максимум символов: 36</p>
+            <form>
+                <input type="text" maxlength="36" placeholder="Кто читает тот лох))">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+        <div class="user__customization">
+            <p class="user__customization__title">Цвет обводки профиля</p>
+            <p class="user__customization__description">Выберите цвет обводки профиля</p>
+            <form class="color-radio">
+                <label for="colorwhite" class="color-radio" data-color="white" style="background-color: white;"></label>
+                <input type="radio" class="color-radio" name="colorwhite" value="white">
+                <label for="colorgreen" class="color-radio" data-color="green" style="background-color: green;"></label>
+                <input type="radio" class="color-radio" name="colorgreen" value="green">
+                <label for="colorcolorgreen" class="color-radio" data-color="cyan"
+                    style="background-color: cyan;"></label>
+                <input type="radio" class="color-radio" name="colorcolorgreen" value="colorgreen">
+                <label for="colorred" class="color-radio" data-color="red" style="background-color: red;"></label>
+                <input type="radio" class="color-radio" name="colorred" value="red">
+                <label for="colorpurple" class="color-radio" data-color="purple"
+                    style="background-color: purple;"></label>
+                <input type="radio" class="color-radio" name="colorpurple" value="purple">
+                <label for="colorblack" class="color-radio" data-color="black" style="background-color: black;"></label>
+                <input type="radio" class="color-radio" name="colorblack" value="black">
+                <label for="colobluer" class="color-radio" data-color="blue" style="background-color: blue;"></label>
+                <input type="radio" class="color-radio" name="colorblue" value="blue">
+                <label for="coloryellow" class="color-radio" data-color="yellow"
+                    style="background-color: yellow;"></label>
+                <input type="radio" class="color-radio" name="coloryellow" value="yellow">
+            </form>
+            <a href="#">Сохранить</a>
+        </div>
+        <div class="user__customization">
+            <p class="user__customization__title">Статистика на серверах</p>
+            <p class="user__customization__description">Выберите, какая информация будет отображаться</p>
+            <a href="#" style="margin-top: 10px;">Выбрать информацию</a>
+            <a href="#" class="disabled">По умолчанию</a>
+        </div>
+    </div>
 </div>
