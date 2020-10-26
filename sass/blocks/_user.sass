@@ -251,3 +251,78 @@
                 &:hover
                     img
                         filter: grayscale(0)
+    &__security
+        &__title
+            margin: 0 0 5px 0
+            font-size: 24px
+            +Bold
+        &__form button
+            margin-top: 10px
+    &__privileges
+        display: flex
+        flex-wrap: wrap
+        margin-top: 15px
+    &__privilege
+        text-align: center
+        padding: 35px
+        width: calc(100% / 3 - 6.67px)
+        margin-top: 10px
+        margin-right: 10px
+        outline: 1px solid #333333
+        background: rgba(245,245,245,0.02)
+        cursor: pointer
+        transition: outline .15s ease, background .15s ease
+        &:nth-child(-n+3)
+            margin-top: 0
+        &:nth-child(3n)
+            margin-right: 0
+        &:hover
+            outline: 1px solid #666666
+            background: rgba(245,245,245,0.08)
+        h3
+            font-size: 24px
+            margin: 0
+            +Bold
+        p
+            font-size: 24px
+            margin: 0
+            +Bold
+            &.no-color
+                margin: 20px 0
+                color: #eeeeee
+                text-shadow: none
+                +Regular
+            span
+                color: #fda100
+                +Bold
+    &__active-privileges
+        display: flex
+        flex-wrap: wrap
+    &__active-privilege
+        width: calc(100% / 3 - 6.67px)
+        margin-right: 10px
+        margin-top: 10px
+        background-color: rgba(245,245,245,0.02)
+        cursor: default
+        text-align: center
+        padding: 15px
+        outline: 1px solid #333333
+        transition: outline .15s ease, background-color .15s ease
+        +Medium
+        &:hover
+            outline: 1px solid #666666
+            background-color: rgba(245,245,245,0.1)
+        &:nth-child(-n+3)
+            margin-top: 0
+        &:nth-child(3n)
+            margin-right: 0
+        p
+            margin: 0
+            &:first-child
+                font-size: 24px
+                +Medium
+            &:last-child
+                font-size: 22px
+                padding-top: 5px
+                color: #cccccc
+                +Regular

@@ -130,13 +130,13 @@ function hexToRgbA(hex, opacity) {
         return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + opacity + ')';
     }
     throw new Error('Bad Hex');
-}
+};
 
 if ($('.donate__menu__privileges').length) {
     $('.donate__menu__privileges').children().each(function () {
         let color = $(this).attr('data-privilege-color');
         let shadow = '0 0 10px ' + color;
-        let background = hexToRgbA(color, '.1')
+        let background = hexToRgbA(color, '.1');
         $(this).css({ color: color, outlineColor: color, textShadow: shadow, backgroundColor: background });
         let tab = '#' + $(this).attr('data-tab');
         $(tab).find('.privilege-color').css({ color: color, textShadow: shadow });
@@ -263,6 +263,14 @@ function loadAchievementsContent() {
     });
 };
 
+function loadPrivilegesContent() {
+    $('.user__privilege').each(function() {
+        let privilegeColor = $(this).attr('data-privilege-color');
+        let privilegeTextShadow = '0 0 10px ' + privilegeColor;
+        $(this).css({ color: privilegeColor, outlineColor: privilegeColor, textShadow: privilegeTextShadow });
+    });
+};
+
 if ($('.user__content').length) {
     let preloader = $('.user__content').attr('data-preloader');
     $('.user__content').html('<div class="ajax-preloader-wrap"><div class="ajax-preloader" style="background-image: url(' + "'" + preloader + "'" + ');"></div></div>');
@@ -278,7 +286,9 @@ if ($('.user__content').length) {
                     loadCabinetContent();
                 } else if (part == 'user_achievements') {
                     loadAchievementsContent();
-                }
+                } else if (part == 'user_privileges') {
+                    loadPrivilegesContent();
+                };
             });
         };
     });

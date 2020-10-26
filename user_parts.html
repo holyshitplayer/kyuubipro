@@ -489,15 +489,75 @@
 </div>
 
 <div id="user_security">
-    <h3 style="text-align: center;">Безопасность</h3>
+    <h3 class="block-title"><span>Безопасность</span></h3>
+    <div class="double-block not-reverse">
+        <div class="half-block">
+            <p class="user__security__title">Смена пароля</p>
+            <form class="user__security__form">
+                <input type="password" name="oldpassword" placeholder="Старый пароль">
+                <input type="password" name="newpassword" placeholder="Новый пароль">
+                <input type="password" name="newpassword" placeholder="Новый пароль еще раз">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+        <div class="half-block">
+            <p class="user__security__title">Смена почты</p>
+            <form class="user__security__form">
+                <input type="password" name="password" placeholder="Пароль">
+                <input type="email" name="oldemail" placeholder="Старый E-mail">
+                <input type="email" name="newemail" placeholder="Новый E-mail">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div id="user_privileges">
-    <h3 style="text-align: center;">Привелегии</h3>
-</div>
-
-<div id="user_abilities">
-    <h3 style="text-align: center;">Игровые права</h3>
+    <h3 class="block-title"><span>Привелегии</span></h3>
+    <div class="block-text">
+        <p>Расширьте возможности своего аккаунта с приобретением эксклюзивных донат-привилегий.
+            Купив привелегию, она
+            будет действовать на всех серверах проекта! Срок действия каждой привелегии - 30
+            дней.</p>
+    </div>
+    <div class="block-text hint">
+        <p class="block-text__title">Подсказка</p>
+        <p>Ознакомиться с возможностями каждой привелегии можно <a href="donate.html" class="orange-link">здесь</a>.</p>
+    </div>
+    <div class="user__privileges">
+        <div class="user__privilege" data-privilege-color="#faec69">
+            <h3>VIP</h3>
+            <p class="no-color">Более <span>10</span> новых возможностей</p>
+            <p>200 рублей</p>
+        </div>
+        <div class="user__privilege" data-privilege-color="#6977fa">
+            <h3>Premium</h3>
+            <p class="no-color">Более <span>20</span> новых возможностей</p>
+            <p>400 рублей</p>
+        </div>
+        <div class="user__privilege" data-privilege-color="#fa698f">
+            <h3>Deluxe</h3>
+            <p class="no-color">Более <span>30</span> новых возможностей</p>
+            <p>600 рублей</p>
+        </div>
+    </div>
+    <div class="block-text">
+        <p class="block-text__title">Ваши текущие привелегии</p>
+        <div class="user__active-privileges">
+            <div class="user__active-privilege">
+                <p>Привелегия VIP</p>
+                <p>Истекает 26.10.2020</p>
+            </div>
+            <div class="user__active-privilege">
+                <p>Привелегия VIP</p>
+                <p>Истекает 26.10.2020</p>
+            </div>
+            <div class="user__active-privilege">
+                <p>Привелегия VIP</p>
+                <p>Истекает 26.10.2020</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="user_customization">
