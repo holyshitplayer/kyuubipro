@@ -373,3 +373,17 @@ if ($('.modal').length) {
         });
     });
 };
+
+function changePriceText(i, b, a) {
+    let range_info = $('.modal__shop-item-range');
+    if (i == "" || i < 0) i = 1;
+    if (i > parseInt(range_info.attr("max"))) {
+        i = parseInt(range_info.attr("max"));
+        $(".modal__shop-item-text").val(i);
+    }
+    changePriceRange(i, b, a);
+}
+function changePriceRange(i, b, a) {
+    $("#shop-item-total").html('Купить ' + '<span>' + (i * a) + '</span>' + ' шт. за <span>' + (i * b).toFixed(0) + '</span>' + ' чакры');
+    $(".modal__shop-item-range, .modal__shop-item-text").val(i);
+}
