@@ -1,0 +1,66 @@
+.modal
+    opacity: 0
+    visibility: hidden
+    width: 1000px
+    padding: 15px
+    max-height: 85%
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 101
+    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2)
+    border-radius: 3px
+    background: linear-gradient(rgba(20,20,20,0.85), rgba(20,20,20,0.85)), url('../img/backgrounds/body.webp')
+    background-repeat: no-repeat
+    background-size: cover
+    overflow-y: auto
+    transition: 0.3s all
+    &.active
+        opacity: 1
+        visibility: visible
+        overflow: auto
+    &__overlay
+        opacity: 0
+        visibility: hidden
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, .6)
+        z-index: 100
+        transition: all .15s ease
+        backdrop-filter: blur(2px)
+        &.active
+            opacity: 1
+            visibility: visible
+    .close-modal
+        cursor: pointer
+    form
+        button
+            margin-top: 10px
+    &__auth-link
+        font-size: 24px
+        text-decoration: none
+        display: inline-block
+        margin-top: 10px
+        color: #fda10f
+        border-bottom: 1px solid transparent
+        transition: border-color .15s ease
+        &:hover
+            border-color: #fda100
+
+@media (max-width: 1600px)
+    .modal
+        width: 750px
+        &__auth-link
+            font-size: 16px
+
+@media (max-width: 767px)
+    .modal
+        width: 500px
+
+@media (max-width: 576px)
+    .modal
+        width: 85%

@@ -120,7 +120,7 @@ $('.server__mods').masonry({
 });
 
 function hexToRgbA(hex, opacity) {
-    var c;
+    let c;
     if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
         c = hex.substring(1).split('');
         if (c.length == 3) {
@@ -145,7 +145,7 @@ if ($('.donate__menu__privileges').length) {
 
 if ($('.tabs').length) {
     $('.tab-link').click(function () {
-        var tab_id = $(this).attr('data-tab');
+        let tab_id = $(this).attr('data-tab');
 
         $('.tab-link').removeClass('active');
         $('.tab').removeClass('active');
@@ -214,7 +214,7 @@ if ($('.user__content').length) {
             let url = 'url(' + $(this).attr('data-bg-url') + ')'
             $(this).css('background-image', url);
         });
-    
+
         let skinInner = document.getElementById('skin-container');
         let skinViewer = new skinview3d.FXAASkinViewer(skinInner, {
             width: 300,
@@ -235,23 +235,23 @@ if ($('.user__content').length) {
         let walk = skinViewer.animations.add(skinview3d.WalkingAnimation);
         // Set the speed of an animation
         walk.speed = 0.3;
-    
+
         $('.tab-link').click(function () {
-            var tab_id = $(this).attr('data-tab');
-    
+            let tab_id = $(this).attr('data-tab');
+
             $('.tab-link').removeClass('active');
             $('.tab').removeClass('active');
-    
+
             $(this).addClass('active');
             $("#" + tab_id).addClass('active');
         });
-    
+
         let online = Number($('.guilds__guild__players').attr('data-guild-now'));
         let total = Number($('.guilds__guild__players').attr('data-guild-total'));
         let width = online / total * 100 + '%';
         $('.guilds__guild__players').find('.guilds__guild__players-now').css('width', width);
     };
-    
+
     function loadAchievementsContent() {
         $('.background').each(function () {
             let url = 'url(' + $(this).attr('data-bg-url') + ')'
@@ -269,7 +269,7 @@ if ($('.user__content').length) {
             $('.user__content').load('user_parts.html #user_achievements_block');
         });
     };
-    
+
     function loadPrivilegesContent() {
         $('.user__privilege').each(function () {
             let privilegeColor = $(this).attr('data-privilege-color');
@@ -292,8 +292,11 @@ function loadHints() {
             showHint.addEventListener('mousemove', e => {
                 hint.style.top = e.pageY + 3 + 'px';
                 hint.style.left = e.pageX - 3 + 'px';
-                if (hint.offsetWidth + e.pageX > document.body.offsetWidth) {
-                    hint.style.left = e.pageX - (e.pageX + hint.offsetWidth - document.body.offsetWidth) - 3 + 'px';
+                if (hint.offsetWidth + e.pageX + 20 > document.body.offsetWidth) {
+                    hint.style.left = e.pageX - (e.pageX + hint.offsetWidth - document.body.offsetWidth) - 10 + 'px';
+                };
+                if (hint.offsetHeight + e.pageY + 20 > document.body.offsetHeight) {
+                    hint.style.top = e.pageY - (e.pageY + hint.offsetHeight - document.body.offsetHeight) - 10 + 'px';
                 };
             });
         };
@@ -327,5 +330,46 @@ if ($('.user__content').length) {
                 };
             });
         };
+    });
+};
+
+if ($('.modal').length) {
+    document.addEventListener('DOMContentLoaded', function () {
+        let modalButtons = $('.open-modal'),
+            overlay = $('.modal__overlay'),
+            closeButtons = $('.close-modal');
+
+        modalButtons.click(function (e) {
+            e.preventDefault();
+            let modalId = '#' + $(this).attr('data-modal'),
+                modalElem = $(modalId);
+
+            modalElem.addClass('active');
+            overlay.addClass('active');
+            $('body').css('overflow', 'hidden');
+        });
+
+        closeButtons.click(function (e) {
+            e.preventDefault();
+            let parentModal = $(this).closest('.modal');
+            parentModal.removeClass('active');
+            overlay.removeClass('active');
+            $('body').css('overflow', 'auto');
+        });
+
+        document.body.addEventListener('keyup', function (e) {
+            let key = e.keyCode;
+            if (key == 27) {
+                $('.modal.active').removeClass('active');
+                $('.modal__overlay').removeClass('active');
+                $('body').css('overflow', 'auto');
+            };
+        }, false);
+
+        overlay.click(function () {
+            $('.modal.active').removeClass('active');
+            $(this).removeClass('active');
+            $('body').css('overflow', 'auto');
+        });
     });
 };

@@ -151,7 +151,8 @@
                         <div class="block-text">
                             <p class="block-text__title">Регистрация</p>
                             <p>Зарегистрировавшись, вы сможете зайти в игру, общаться на форуме, пользоваться личным кабинетом и ещё многим другим. Вам всего лишь нужно заполнить все поля, зарегистрироваться и подтвердить почту.</p>
-                            <a href="signup.html" class="text-link" style="margin-right: 5px;">Регистрация</a><a href="#" class="text-link">Войти</a>
+                            <a href="signup.html" class="text-link" style="margin-right: 5px;">Регистрация</a>
+                            <a href="#" class="text-link open-modal" data-modal="auth">Войти</a>
                         </div>
                         <div class="block-text">
                             <p class="block-text__title">Скачивание лаунчера</p>
@@ -202,11 +203,25 @@
         </div>
     </footer>
 
+    <div class="modal" id="auth">
+        <h3 class="block-title"><span>Авторизация</span><i class="fas fa-times close-modal show-hint" data-hint="Закрыть окно"></i></h3>
+        <div class="block">
+            <form>
+                <input type="text" placeholder="Имя пользователя">
+                <input type="password" placeholder="Пароль">
+                <button type="submit">Войти</button>
+            </form>
+            <a href="#" class="modal__auth-link">Забыли пароль?</a>
+        </div>
+    </div>
+    <div class="modal__overlay"></div>
+
 
     <script src="libs/jquery/jquery-3.5.1.min.js"></script>
     <script src="libs/menu/menu.js"></script>
     <script src="libs/swiper/swiper-bundle.min.js"></script>
     <script src="libs/masonry/masonry.min.js"></script>
+    <script src="libs/closest/closest.js"></script>
     <script src="js/main.js"></script>
 
 </body>
