@@ -33,7 +33,6 @@ body
     display: flex
     flex-direction: column
     height: 100vh
-    position: relative
     background: linear-gradient(rgba(20,20,20,0.85), rgba(20,20,20,0.85)), url('../img/backgrounds/body.webp')
     background-attachment: fixed
     background-repeat: no-repeat
@@ -240,6 +239,38 @@ section
     &.active
         display: inherit
 
+.cursor-hint
+    background-color: rgba(0, 0, 0, 0.9)
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75)
+    color: #eeeeee
+    font-size: 22px
+    position: absolute
+    padding: 12px
+    margin-left: 15px
+    margin-top: 15px
+    border-radius: 3px
+    max-width: 450px
+    text-align: center
+    +Medium
+    img
+        display: block
+        margin: 0 auto
+        max-height: 150px
+        max-width: 100%
+        border-radius: 3px
+    p
+        margin: 0
+        &.hint-title
+            margin: 0 0 10px 0
+            color: #fda100
+    i
+        font-size: 32px
+        margin: 0 3px
+    .hint-color
+        width: 48px
+        height: 48px
+        margin: 0 auto
+
 
 @media (max-width: 1600px)
     ::-webkit-scrollbar
@@ -267,6 +298,22 @@ section
             font-size: 16px
     .form-block
         width: 50%
+    .cursor-hint
+        font-size: 14px
+        padding: 8px
+        margin-left: 10px
+        margin-top: 10px
+        max-width: 300px
+        img
+            max-height: 90px
+        p
+            &.hint-title
+                margin: 0 0 5px 0
+        i
+            font-size: 24px
+        .hint-color
+            width: 24px
+            height: 24px
 
 @media (max-width: 992px)
     .half-block, .third-block, .two-thirds-block
