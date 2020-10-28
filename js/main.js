@@ -380,7 +380,7 @@ function changePriceText(i, b, a) {
     if (i > parseInt(range_info.attr("max"))) {
         i = parseInt(range_info.attr("max"));
         $(".modal__shop-item-text").val(i);
-    }
+    };
     changePriceRange(i, b, a);
 }
 function changePriceRange(i, b, a) {
