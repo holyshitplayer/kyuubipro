@@ -176,6 +176,65 @@
                 span
                     color: #fda100
                     +Medium
+    .improvement__textarea
+        margin-top: 10px
+    &__improvement-choose
+        display: block
+        width: 100%
+        color: #ffffff
+        background: rgba(245,245,245,0.02)
+        border: none
+        outline: 1px solid #333333
+        transition: outline .15s ease
+        font-size: 24px
+        padding: 25px
+        margin-top: 10px
+        outline-offset: -1px
+        +Medium
+        &:hover
+            outline: 1px solid #666666
+        select
+            margin-left: 10px
+            background-color: #252525
+            color: #eeeeee
+            font-size: 24px
+            outline: 1px solid #333333
+            padding: 20px
+            +Medium
+    button.improvement
+        margin: 10px auto 0 auto
+    &__chakra
+        &__list
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__item
+            text-align: center
+            cursor: pointer
+            background-color: rgba(245,245,245,0.02)
+            padding: 15px
+            outline: 1px solid #333333
+            transition: background-color .15s ease, outline .15s ease
+            &:hover
+                outline: 1px solid #666666
+                background-color: rgba(245,245,245,0.1)
+            &:nth-child(-n+3)
+                width: calc(100% / 3 - 6.67px)
+            &:nth-last-child(-n+2)
+                margin-top: 10px
+                width: calc(100% / 2 - 5px)
+            i
+                color: #fda100
+                font-size: 36px
+                margin-bottom: 5px
+            h3
+                font-size: 26px
+                margin: 0
+                color: #fda100
+                +Medium
+            p
+                font-size: 24px
+                margin: 0
             
 
 @media (max-width: 1600px)
@@ -206,10 +265,48 @@
                     font-size: 16px
                 p
                     font-size: 16px
+        &__improvement-choose
+            font-size: 16px
+            padding: 15px
+            select
+                font-size: 16px
+                padding: 10px
+        &#pay
+            p
+                margin: 0 0 5px 0
+                &:last-child
+                    margin-bottom: 0
+                span
+                    color: #fda100
+                    +Bold
+                i
+                    margin-right: 5px
+            form
+                button
+                    margin-bottom: 10px
+        &__chakra
+            &__item
+                i
+                    font-size: 28px
+                h3
+                    font-size: 18px
+                p
+                    font-size: 16px
 
-@media (max-width: 767px)
+@media (max-width: 768px)
     .modal
         width: 500px
+        &__chakra
+            &__item
+                margin-top: 10px
+                &:nth-child(-n+2)
+                    margin-top: 0
+                &:nth-child(-n+3)
+                    width: calc(100% / 2 - 5px)
+                &:nth-last-child(-n+2)
+                    width: calc(100% / 2 - 5px)
+                &:last-child
+                    width: 100%
 
 @media (max-width: 576px)
     .modal
@@ -223,5 +320,22 @@
                 margin-right: 0
                 &:nth-child(-n+2)
                     margin-top: 10px
+                &:first-child
+                    margin-top: 0
+        &__improvement-choose
+            display: flex
+            justify-content: space-between
+            align-items: center
+            select
+                width: 100%
+        &__chakra
+            &__item
+                margin-top: 10px
+                &:nth-child(-n+2)
+                    margin-top: 10px
+                &:nth-child(-n+3)
+                    width: 100%
+                &:nth-last-child(-n+2)
+                    width: 100%
                 &:first-child
                     margin-top: 0

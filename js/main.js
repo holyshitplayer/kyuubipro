@@ -155,7 +155,7 @@ if ($('.tabs').length) {
     })
 };
 
-if ($('.improvement').length) {
+if ($('.improvement__comment-field').length) {
     $('.improvement__mark').click(function () {
         $('.improvement__mark').removeClass('current');
         $(this).addClass('current');
@@ -387,3 +387,13 @@ function changePriceRange(i, b, a) {
     $("#shop-item-total").html('Купить ' + '<span>' + (i * a) + '</span>' + ' шт. за <span>' + (i * b).toFixed(0) + '</span>' + ' чакры');
     $(".modal__shop-item-range, .modal__shop-item-text").val(i);
 }
+
+let payInput = $('.modal#pay form input');
+let payBonus = $('span#pay-bonus').text();
+let payTotal = $('span#pay-total');
+let bonus = Number(payInput.val()) * (Number(payBonus) / 100);
+payTotal.text(Number(payInput.val()) + Number(bonus));
+function calculateBonus() {
+    let bonus = Number(payInput.val()) * (Number(payBonus) / 100);
+    payTotal.text(Number(payInput.val()) + Number(bonus));
+};

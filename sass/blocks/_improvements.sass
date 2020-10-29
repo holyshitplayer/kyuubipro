@@ -96,26 +96,26 @@
             justify-content: space-between
             flex-wrap: wrap
             align-items: flex-end
+    &__comment-field
+        width: 100%
+        height: 100px
+        outline: 1px solid #333333
+        background-color: rgba(0,0,0,.1)
+        color: #eeeeee
+        resize: vertical
+        border: none
+        font-size: 16px
+        transition: outline .15s ease
+        padding: 5px
+        +Regular
+        &:hover, &:focus
+            outline: 1px solid #666666
     form
-        textarea
-            width: 100%
-            height: 100px
-            outline: 1px solid #333333
-            background-color: rgba(0,0,0,.1)
-            color: #eeeeee
-            resize: vertical
-            border: none
-            font-size: 16px
-            transition: outline .15s ease
-            padding: 5px
-            +Regular
-            &:hover, &:focus
-                outline: 1px solid #666666
         button
             width: 250px
     &__textarea
         div
-            font-size: 12px
+            font-size: 20px
             text-align: right
     &__comments
         .block-text

@@ -142,7 +142,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="block">
-                        <h3 class="block-title"><span>Улучшения</span><a href="#">Предложить идею</a></h3>
+                        <h3 class="block-title"><span>Улучшения</span><a href="#" class="open-modal" data-modal="new-idea">Предложить идею</a></h3>
                         <div class="block-text">
                             <p>Добро пожаловать на страницу улучшений! Здесь любой игрок может предложить свою идею, будь то новый мод или исправление ошибки, а другие игроки её оценивают. Если у идеи будет высокий рейтинг и администрация ее одобрит, то предложение будет реализовано но Kyuubi. Выберите интересное Вам предложение и оцените его, или же создайте свое.</p>
                         </div>
@@ -346,6 +346,30 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal" id="new-idea">
+        <h3 class="block-title"><span>Новая идея</span><i class="fas fa-times close-modal show-hint" data-hint="Закрыть окно"></i></h3>
+        <div class="block">
+            <form>
+                <input type="text" placeholder="Заголовок">
+                <div class="improvement__textarea">
+                    <textarea class="improvement__comment-field" maxlength="2000"></textarea>
+                    <div><span class="left"></span>/<span class="total"></span> символов</div>
+                </div>
+                <div class="modal__improvement-choose">
+                    <span>Сервер:</span>
+                    <select>
+                        <option value="pt">PowerTech</option>
+                        <option value="mg">Magic</option>
+                        <option value="mt">MagicTech</option>
+                        <option value="cl">Classic</option>
+                    </select>
+                </div>
+                <button type="submit" class="modal__big-link improvement">Опубликовать</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal__overlay"></div>
 
 
     <script src="libs/jquery/jquery-3.5.1.min.js"></script>
