@@ -29,22 +29,30 @@ $('a[href*="#"]').each(function () {
     };
 })
 
+
 document.addEventListener(
     "DOMContentLoaded", () => {
-        const node = $('#menu')[0];
-        const menu = new MmenuLight(node);
+        const menu = new MmenuLight(
+            document.querySelector("#menu"),
+            "(max-width: 992px)"
+        );
 
-        menu.enable("(max-width: 992px)");
-        menu.offcanvas();
-
-        $("a[href='#menu']").click(function (e) {
-            menu.open();
-            e.preventDefault();
-            e.stopPropagation();
+        const navigator = menu.navigation({
+            theme: "dark",
+            title: "Меню",
         });
+        const drawer = menu.offcanvas();
 
-        $('#menu-close').click(function () {
-            menu.close();
+        document.querySelector('a[href="#menu"]')
+            .addEventListener('click', (evnt) => {
+                evnt.preventDefault();
+                drawer.open();
+            });
+
+        document.querySelector('div#menu-close')
+        .addEventListener('click', (evnt) => {
+            evnt.preventDefault();
+            drawer.close();
         });
     }
 );
